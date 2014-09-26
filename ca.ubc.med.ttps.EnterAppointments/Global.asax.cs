@@ -6,6 +6,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
+using System.Web.UI;
 
 namespace ca.ubc.med.ttps.EnterAppointments
 {
@@ -16,6 +17,16 @@ namespace ca.ubc.med.ttps.EnterAppointments
             // Code that runs on application startup
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            //Load JqueryUI
+            string str = "1.9.0"; 
+            ScriptManager.ScriptResourceMapping.AddDefinition(
+                                                                "jquery.ui.combined"
+                                                                , new ScriptResourceDefinition { Path = "~/Scripts/jquery-ui-" + str + ".min.js"
+                                                                , DebugPath = "~/Scripts/jquery-ui-" + str + ".js"
+                                                                , CdnPath = "http://ajax.aspnetcdn.com/ajax/jquery.ui/" + str + "/jquery-ui.min.js"
+                                                                , CdnDebugPath = "http://ajax.aspnetcdn.com/ajax/jquery.ui/" + str + "/jquery-ui.js"
+                                                                , CdnSupportsSecureConnection = true });
         }
     }
 }

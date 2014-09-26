@@ -12,13 +12,5 @@ namespace ca.ubc.med.ttps.EnterAppointments {
     
     public partial class _Default {
         
-        /// <summary>
-        /// ucPeople control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::ca.ubc.med.ttps.EnterAppointments.WebControls.ucPerson ucPeople;
     }
 }
