@@ -219,5 +219,23 @@
     <tr>
         <td colspan="3"><hr /></td>
     </tr>
+    <tr>
+        <td class="auto-style1">Occupation</td>
+        <td>&nbsp;</td>
+        <td><asp:DropDownList ID="ddlOccupation" runat="server"></asp:DropDownList></td>
+    </tr>
+    <tr>
+        <td class="auto-style1">Payment Arrangement</td>
+        <td>&nbsp;</td>
+        <td><asp:DropDownList ID="ddlPaymentArrangement" runat="server"></asp:DropDownList></td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td colspan="3" style="text-align:center;">
+            <asp:Button ID="btnSave" runat="server" Text="Save" Width="60px" />&nbsp;<asp:Button ID="Button1" runat="server" Text="Button" />
+        </td>
+    </tr>
 </table>
 
