@@ -1,0 +1,417 @@
+﻿.body
+{
+	margin:0px 0px 0px 0px;
+	font-family: Arial, Sans-Serif, Trebuchet MS, Times New Roman, Verdana;
+	font-size: 8pt;
+}
+
+TD.header_bg
+{
+	background-image:url(header_bg.gif);
+}
+#Logoff
+{
+    height: 24px;
+    position: relative;
+    top: 74px;
+    font-size: 10pt;
+    font-weight: bold;
+    text-indent: -210px;
+    font-family: Arial, Sans-Serif, Trebuchet MS, Times New Roman, Verdana;
+}
+.leftCol {
+	margin: 0;
+	padding: 0;
+	font-size: 8pt;
+	/*font-weight:bold;*/
+	border: none;
+	color:Navy Blue;
+	float:left;
+	padding: 0px 5px 0 0px;
+	font-family: Arial, Sans-Serif, Trebuchet MS, Times New Roman, Verdana;
+}
+.rightCol {
+	margin: 0px 0px 0px 225px; /*shorthand for top right bottom left values*/
+	/*margin: 0 0 0 236px;*/ /*shorthand for top right bottom left values*/
+	/*padding: 10px 0 0 20px;*/
+	font-size: 8pt;
+	padding: 0px 0 0 0px;
+	min-height:600px;
+    height:auto !important;
+    height:600px; 
+	border-left: solid 1px #cccccc;
+	font-family: Arial, Sans-Serif, Trebuchet MS, Times New Roman, Verdana;
+}
+.msgholder {
+	margin: 50px 0px 0px 30%; /*shorthand for top right bottom left values*/
+	/*margin: 0 0 0 236px;*/ /*shorthand for top right bottom left values*/
+	/*padding: 10px 0 0 20px;*/
+	padding: 0px 0 0 0px;
+	text-align:left;
+	word-spacing: 2px;
+	line-height: 25px;
+	width:500px;
+	height: 580px;
+	color: black;
+	font-size: 8pt;
+	font-family: Arial, Sans-Serif, Trebuchet MS, Times New Roman, Verdana;
+}
+#footer {
+	margin: 0 0 0 0px; /*sets the left margin to align with the mainContent div*/
+	padding: 0 0 0 0px;
+	text-align: center;
+	color: black;
+	font-size:8pt;
+	font-family: Arial, Sans-Serif, Trebuchet MS, Times New Roman, Verdana;
+	/*font-weight:bold;*/
+}
+#footer p.copyright {
+	margin: 0px 0px 0px 0px;
+	font-size:8pt;
+	/*font-weight:bold;*/
+}
+#footer a.copyright {
+	text-decoration: none;
+	color: #003399;
+	font-size: 8pt;
+	font-family: Arial, Sans-Serif, Trebuchet MS, Times New Roman, Verdana;
+	/*font-weight:bold;*/
+}
+.footerlink
+{
+	color: black;
+	/*font-weight:bold;*/
+}
+.frogLogo {
+	float: left;
+}
+.programInfo
+{
+	color:#003399;
+	font-size: 8pt;
+	font-weight:bold;
+	text-align:center;
+	font-family: Arial, Sans-Serif, Trebuchet MS, Times New Roman, Verdana;
+	background-image:url(header_bg.gif);
+}
+.help
+{
+	color:#003399;
+	font-size: 8pt;
+	font-weight:bold;
+	text-align:center;
+	font-family: Arial, Sans-Serif, Trebuchet MS, Times New Roman, Verdana;
+}
+.pblTitle {
+	color: #003399;
+	font-size: 18pt;/*24pt*/
+	text-align:center;
+	margin: 0px 0px -8px 0px;	/*shorthand for top-right-bottom-left*/	
+	margin-bottom: 0px;
+	letter-spacing: 3px; 
+    font-weight:bold;
+    font-family: Arial, Sans-Serif, Trebuchet MS, Times New Roman, Verdana;
+    text-indent: 15px;
+}
+.medTitle{
+	color: #800000;		
+	font-size: 14pt; /*18pt */
+    vertical-align:baseline;
+	margin: 0px 0px 0px 30px;	/*shorthand for top-right-bottom-left*/	
+	letter-spacing: 3px;
+	font-weight:bold;
+	font-family: Arial, Sans-Serif, Trebuchet MS, Times New Roman, Verdana;
+}
+.headerLine {
+	border-bottom: solid 1px #cccccc;
+	border-top: solid 6px #cc9900;
+	margin: 0px;
+	padding: 0px;
+	font-family: Arial, Sans-Serif, Trebuchet MS, Times New Roman, Verdana;
+}
+
+.content_page_title 
+{
+	color: white;		
+	font-size: 10pt; /* 12px */
+	letter-spacing: 3px;
+	text-align:center;
+	background-image: url(header_background.gif);
+	font-family: Arial, Sans-Serif, Trebuchet MS, Times New Roman, Verdana;
+	font-weight:bold;
+}
+.content_page_subtitle
+{
+	color: White; /*#003399;		*/
+	font-size: 7pt; /*9pt*/
+	/*text-indent: 10px;*/
+	letter-spacing: 2px;
+	text-align:center;
+	font-weight:bold;
+	background-image: url(header_background.gif);
+	font-family: Arial, Sans-Serif, Trebuchet MS, Times New Roman, Verdana;
+}
+
+.content_page_search
+{
+	background-image: url(header_background.gif);
+	color: white;
+	font-size: 7pt;
+	font-weight:bold;
+	text-align:center;
+	font-family: Arial, Sans-Serif, Trebuchet MS, Times New Roman, Verdana;
+}
+.content_page_rowheader
+{
+	background-image: url(header_background.gif);
+	color:white;
+	font-size: 7pt;
+	font-weight:bold;
+	text-align:center;
+	font-family: Arial, Sans-Serif, Trebuchet MS, Times New Roman, Verdana;
+}
+.content_page_rowheader_left
+{
+	background-image: url(header_background.gif);
+	color:white;
+	font-size: 7pt;
+	font-weight:bold;
+	text-align:left;
+	font-family: Arial, Sans-Serif, Trebuchet MS, Times New Roman, Verdana;
+}
+
+.content_paging
+{
+	color:#003399;
+	font-size: 8pt;
+	font-weight:bold;
+	text-align:center;
+	font-family: Arial, Sans-Serif, Trebuchet MS, Times New Roman, Verdana;
+}
+.content_page_rowheader2
+{
+	background-color:#E6EFF7;
+	color:#003399;
+	font-size: 7pt;
+	font-weight:bold;
+	text-align:center;
+	font-family: Arial, Sans-Serif, Trebuchet MS, Times New Roman, Verdana;
+}
+
+.content_page_row
+{
+	background-color:#E6EFF7;
+	color:Black;
+	font-size: 8pt;
+	text-align:center;
+	font-family: Arial, Sans-Serif, Trebuchet MS, Times New Roman, Verdana;
+
+}
+.content_page_row_left
+{
+	background-color:#E6EFF7;
+	color:Black;
+	font-size: 8pt;
+	text-align:left;
+	font-family: Arial, Sans-Serif, Trebuchet MS, Times New Roman, Verdana;
+
+}
+.content_page_row_normal
+{
+	background-color:#E6EFF7;
+	color:Black;
+	font-size: 8pt;
+	font-family: Arial, Sans-Serif, Trebuchet MS, Times New Roman, Verdana;
+
+}
+
+.ListRowNew
+{
+    background-color: #F4DEA2;
+    color: Black;
+    font-size: 8pt;
+    text-align: center;
+    font-family: Arial, Sans-Serif, Trebuchet MS, Times New Roman, Verdana;
+}
+
+.ListRowHighlight
+{    
+    background-color: #e8b837;
+    color: Black;
+    font-size: 8pt;
+    text-align: center;
+    font-family: Arial, Sans-Serif, Trebuchet MS, Times New Roman, Verdana;
+}
+
+.ListRowAlternate
+{
+    background-color: #E6EFF7;
+    color: Black;
+    font-size: 8pt;
+    text-align: center;
+    font-family: Arial, Sans-Serif, Trebuchet MS, Times New Roman, Verdana;
+}
+
+.ListRowWhite
+{
+    /*background-color: #FFFFFF;*/
+    background-color: #f5f7f9;
+    color:Black;
+	font-size: 8pt;
+	text-align:center;
+	font-family: Arial, Sans-Serif, Trebuchet MS, Times New Roman, Verdana;
+}
+
+.content_page_detail
+{
+	text-align: center;
+	font-size: 8pt;
+	font-family: Arial, Sans-Serif, Trebuchet MS, Times New Roman, Verdana;
+	color: black;
+
+}
+
+/*
+.content_page_subheader
+{
+	font-size: 10pt;
+	font-family: Arial, Sans-Serif, Trebuchet MS, Times New Roman, Verdana;
+	color: #696969;
+	color: white;
+	text-align:center;
+	background-image: url(header_background.gif);
+	font-weight:bold;
+}
+*/
+.panel
+{
+  border: solid 1px black;
+  font-family: Verdana;
+  font-size:8pt;
+  width: 180px;
+}
+
+div.standard
+{
+    border-color: #CCCCCC;
+    border-style: Solid;
+    border-width: 0px;
+    font-size: 8pt;
+	font-family: Arial, Sans-Serif, Trebuchet MS, Times New Roman, Verdana;
+	color: black;
+	position: relative;
+    left: 10%;
+    top: 5%;
+}
+.home {
+	margin: 20px 0px 0px 20%; /*shorthand for top right bottom left values*/
+	text-align:left;
+	word-spacing: 2px;
+	line-height: 25px;
+	width:500px;
+	height: 580px;
+	color: black;
+	font-size: 8pt;
+	font-family: Arial, Sans-Serif, Trebuchet MS, Times New Roman, Verdana;
+}
+
+.contolfont
+{
+	font-family: Arial, Sans-Serif, Trebuchet MS, Times New Roman, Verdana;
+	Font-Size:8pt;
+}
+.hyperlink
+{
+	text-decoration:none;
+	font-family: Arial, Sans-Serif, Trebuchet MS, Times New Roman, Verdana;
+	Font-Size:8pt;
+	color: black;
+}
+.SuccessMessage
+{
+	font-size: 14px;
+	font-weight: bolder;
+	color: Green;
+	font-family: Arial;
+}
+.FailedMessage
+{
+	font-size: 14px;
+	font-weight: bolder;
+	color: Red;
+	font-family: Arial;
+}
+.NoUnderLine
+{
+  text-decoration: none;
+}
+.red
+{
+	color:Red;
+}
+.titlecolour
+{
+	color:#003399;
+}
+.Progress
+ {
+   background-color:#003399;
+   color:White;
+   width:105px;
+ }
+ 
+.Progress img {
+   vertical-align:middle;
+   margin:2px;
+ }
+ 
+.myCalender .ajax__calendar_container
+{
+	background-color: #e2e2e2; border:solid 1px #cccccc;
+}
+.myCalender .ajax__calendar_header
+{
+	background-color: #ffffff; margin-bottom: 4px;
+} 
+.myCalender .ajax__calendar_title,
+.myCalender .ajax__calendar_next,
+.myCalender .ajax__calendar_prev
+{
+	color: #004080; padding-top: 3px;
+}
+.myCalender .ajax__calendar_body
+{
+	background-color: #e9e9e9; border: solid 1px #cccccc;
+}
+ .myCalender .ajax__calendar_dayname
+{
+	text-align:center; font-weight:bold; margin-bottom: 4px; margin-top: 2px;
+} 
+.myCalender .ajax__calendar_day
+{
+	text-align:center;
+}
+.myCalender .ajax__calendar_hover .ajax__calendar_day,
+.myCalender .ajax__calendar_hover .ajax__calendar_month,
+.myCalender .ajax__calendar_hover .ajax__calendar_year,
+.myCalender .ajax__calendar_active
+{
+	color: #004080; font-weight:bold; background-color: #ffffff;
+}
+.myCalender .ajax__calendar_today
+{
+	font-weight:bold;
+}
+.myCalender .ajax__calendar_other,
+.myCalender .ajax__calendar_hover .ajax__calendar_today,
+.myCalender .ajax__calendar_hover .ajax__calendar_title
+{
+	color: #bbbbbb;
+}
+
+/* EV: added for List sorting */
+.tblColumn
+{
+    cursor:pointer; 
+}
+

@@ -1,0 +1,572 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{05A0340E-B7FD-4291-9DCD-352790B70216}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ca.ubc.med.ttps.EnterAppointments</RootNamespace>
+    <AssemblyName>ca.ubc.med.ttps.EnterAppointments</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.0.0\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.1.10.2\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <Private>True</Private>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.1.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.1.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.2.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.2.1.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.2.1.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.2.1.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.2.1.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Account\AddPhoneNumber.aspx" />
+    <Content Include="Account\Confirm.aspx" />
+    <Content Include="Account\Forgot.aspx" />
+    <Content Include="Account\Lockout.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Manage.aspx" />
+    <Content Include="Account\ManageLogins.aspx" />
+    <Content Include="Account\ManagePassword.aspx" />
+    <Content Include="Account\OpenAuthProviders.ascx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="Account\RegisterExternalLogin.aspx" />
+    <Content Include="Account\ResetPassword.aspx" />
+    <Content Include="Account\ResetPasswordConfirmation.aspx" />
+    <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
+    <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\ajax-loading.gif" />
+    <Content Include="Content\images\Calendar_scheduleHS.png" />
+    <Content Include="Content\images\CWLTest_login_button.gif" />
+    <Content Include="Content\images\CWL_login_button.gif" />
+    <Content Include="Content\images\delete.gif" />
+    <Content Include="Content\images\edit.gif" />
+    <Content Include="Content\images\frog_clear.gif" />
+    <Content Include="Content\images\NoImage.gif" />
+    <Content Include="Content\images\save.gif" />
+    <Content Include="Content\images\sortdn.gif" />
+    <Content Include="Content\images\sortup.gif" />
+    <Content Include="Content\images\top-ubc.gif" />
+    <Content Include="Content\images\ubc.gif" />
+    <Content Include="Content\images\ubc_banner.gif" />
+    <Content Include="Content\images\ubc_dentistry.gif" />
+    <Content Include="Content\images\ubc_logo_bottom.gif" />
+    <Content Include="Content\images\ubc_logo_top.gif" />
+    <Content Include="Content\images\unbc.gif" />
+    <Content Include="Content\images\uvic.gif" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\standard\cell_background.gif" />
+    <Content Include="Content\standard\header_background.gif" />
+    <Content Include="Content\standard\header_bg.gif" />
+    <Content Include="Content\standard\images\ajax-loading.gif" />
+    <Content Include="Content\standard\images\Calendar_scheduleHS.png" />
+    <Content Include="Content\standard\images\CWLTest_login_button.gif" />
+    <Content Include="Content\standard\images\CWL_login_button.gif" />
+    <Content Include="Content\standard\images\delete.gif" />
+    <Content Include="Content\standard\images\edit.gif" />
+    <Content Include="Content\standard\images\frog_clear.gif" />
+    <Content Include="Content\standard\images\NoImage.gif" />
+    <Content Include="Content\standard\images\save.gif" />
+    <Content Include="Content\standard\images\sortdn.gif" />
+    <Content Include="Content\standard\images\sortup.gif" />
+    <Content Include="Content\standard\images\top-ubc.gif" />
+    <Content Include="Content\standard\images\ubc.gif" />
+    <Content Include="Content\standard\images\ubc_banner.gif" />
+    <Content Include="Content\standard\images\ubc_dentistry.gif" />
+    <Content Include="Content\standard\images\ubc_logo_bottom.gif" />
+    <Content Include="Content\standard\images\ubc_logo_top.gif" />
+    <Content Include="Content\standard\images\unbc.gif" />
+    <Content Include="Content\standard\images\uvic.gif" />
+    <Content Include="Content\standard\page_background.gif" />
+    <Content Include="Content\standard\standard.css" />
+    <Content Include="Content\standard\subheader_background.gif" />
+    <Content Include="Content\ubc_clf\css\clf-2-column.css" />
+    <Content Include="Content\ubc_clf\css\clf-3-even-column.css" />
+    <Content Include="Content\ubc_clf\css\clf-optional.css" />
+    <Content Include="Content\ubc_clf\css\clf-required-fixedwidth.css" />
+    <Content Include="Content\ubc_clf\css\clf-required-fullwidth.css" />
+    <Content Include="Content\ubc_clf\css\clf-typography.css" />
+    <Content Include="Content\ubc_clf\css\helper\clf-required.css" />
+    <Content Include="Content\ubc_clf\css\helper\imagenav.css" />
+    <Content Include="Content\ubc_clf\css\helper\reset.css" />
+    <Content Include="Content\ubc_clf\css\helper\_notes\dwsync.xml" />
+    <Content Include="Content\ubc_clf\css\ie.css" />
+    <Content Include="Content\ubc_clf\css\_notes\dwsync.xml" />
+    <Content Include="Content\ubc_clf\img\content\blueArrow.gif" />
+    <Content Include="Content\ubc_clf\img\content\brownArrow.gif" />
+    <Content Include="Content\ubc_clf\img\content\calloutArrow.gif" />
+    <Content Include="Content\ubc_clf\img\content\calloutArrowOff.gif" />
+    <Content Include="Content\ubc_clf\img\content\calloutArrowOn.gif" />
+    <Content Include="Content\ubc_clf\img\content\calloutHeader.gif" />
+    <Content Include="Content\ubc_clf\img\content\calloutQuickLinks.gif" />
+    <Content Include="Content\ubc_clf\img\content\contentBg.gif" />
+    <Content Include="Content\ubc_clf\img\content\megaMenuBg.gif" />
+    <Content Include="Content\ubc_clf\img\content\megaMenuBottomBg.gif" />
+    <Content Include="Content\ubc_clf\img\content\megaMenuTopBg.gif" />
+    <Content Include="Content\ubc_clf\img\content\okCalloutArrowOff.gif" />
+    <Content Include="Content\ubc_clf\img\content\okCalloutArrowOn.gif" />
+    <Content Include="Content\ubc_clf\img\content\okCalloutHeader.gif" />
+    <Content Include="Content\ubc_clf\img\content\okCalloutQuickLinks.gif" />
+    <Content Include="Content\ubc_clf\img\content\okContentBg.gif" />
+    <Content Include="Content\ubc_clf\img\content\okContentBg2.gif" />
+    <Content Include="Content\ubc_clf\img\content\placeOfMind.jpg" />
+    <Content Include="Content\ubc_clf\img\content\president.jpg" />
+    <Content Include="Content\ubc_clf\img\cycle\D3009BR1.jpg" />
+    <Content Include="Content\ubc_clf\img\cycle\image001.jpg" />
+    <Content Include="Content\ubc_clf\img\cycle\image002.jpg" />
+    <Content Include="Content\ubc_clf\img\cycle\image003.jpg" />
+    <Content Include="Content\ubc_clf\img\cycle\image004.jpg" />
+    <Content Include="Content\ubc_clf\img\cycle\IraqElectionTues.jpg" />
+    <Content Include="Content\ubc_clf\img\cycle\Trade.jpg" />
+    <Content Include="Content\ubc_clf\img\cycle\W31weekahead_Top.jpg" />
+    <Content Include="Content\ubc_clf\img\favicon.ico" />
+    <Content Include="Content\ubc_clf\img\footer\bottomNavBg.gif" />
+    <Content Include="Content\ubc_clf\img\footer\logo.gif" />
+    <Content Include="Content\ubc_clf\img\footer\okLogo.gif" />
+    <Content Include="Content\ubc_clf\img\footer\utilNavBg.gif" />
+    <Content Include="Content\ubc_clf\img\header\campusesBtn.gif" />
+    <Content Include="Content\ubc_clf\img\header\circularLoading.gif" />
+    <Content Include="Content\ubc_clf\img\header\directoryBtn.gif" />
+    <Content Include="Content\ubc_clf\img\header\headerArrow.gif" />
+    <Content Include="Content\ubc_clf\img\header\headerBg.gif" />
+    <Content Include="Content\ubc_clf\img\header\identityBg.gif" />
+    <Content Include="Content\ubc_clf\img\header\mainMenuArrow.gif" />
+    <Content Include="Content\ubc_clf\img\header\mainMenuSelected.gif" />
+    <Content Include="Content\ubc_clf\img\header\mainMenuSubMenuBg.gif" />
+    <Content Include="Content\ubc_clf\img\header\mainNav2.gif" />
+    <Content Include="Content\ubc_clf\img\header\mainNav2Bg.gif" />
+    <Content Include="Content\ubc_clf\img\header\mainNav2LiBg.gif" />
+    <Content Include="Content\ubc_clf\img\header\okHeaderBg.gif" />
+    <Content Include="Content\ubc_clf\img\header\okHeaderBg2.gif" />
+    <Content Include="Content\ubc_clf\img\header\okMainMenuArrow.gif" />
+    <Content Include="Content\ubc_clf\img\header\okMainMenuSelected.gif" />
+    <Content Include="Content\ubc_clf\img\header\okMainMenuSubMenuBg.gif" />
+    <Content Include="Content\ubc_clf\img\header\okMainNav2.gif" />
+    <Content Include="Content\ubc_clf\img\header\okMainNav2LiBg.gif" />
+    <Content Include="Content\ubc_clf\img\header\okUbcLogo.gif" />
+    <Content Include="Content\ubc_clf\img\header\PlaceOfMind-Gif-V04-off.gif" />
+    <Content Include="Content\ubc_clf\img\header\PlaceOfMind-Gif-V04-on.gif" />
+    <Content Include="Content\ubc_clf\img\header\PlaceOfMind-Gif-V04-unanimated.gif" />
+    <Content Include="Content\ubc_clf\img\header\placeOfMind.gif" />
+    <Content Include="Content\ubc_clf\img\header\placeOfMindCallout.gif" />
+    <Content Include="Content\ubc_clf\img\header\placeOfMindLearnMoreBtn.gif" />
+    <Content Include="Content\ubc_clf\img\header\quickLinkBtn.gif" />
+    <Content Include="Content\ubc_clf\img\header\rssBgBottom.gif" />
+    <Content Include="Content\ubc_clf\img\header\rssBgTop.gif" />
+    <Content Include="Content\ubc_clf\img\header\searchBox.gif" />
+    <Content Include="Content\ubc_clf\img\header\searchBtn.gif" />
+    <Content Include="Content\ubc_clf\img\header\spacer.gif" />
+    <Content Include="Content\ubc_clf\img\header\ubcHeader.gif" />
+    <Content Include="Content\ubc_clf\img\header\ubcLogo.gif" />
+    <Content Include="Content\ubc_clf\img\header\ubcSubUnit.gif" />
+    <Content Include="Content\ubc_clf\img\home\arrowOff.gif" />
+    <Content Include="Content\ubc_clf\img\home\arrowOn.gif" />
+    <Content Include="Content\ubc_clf\img\home\headlineWidgetBg.gif" />
+    <Content Include="Content\ubc_clf\img\home\headlineWidgetNextBtn.gif" />
+    <Content Include="Content\ubc_clf\img\home\headlineWidgetPauseBtn.gif" />
+    <Content Include="Content\ubc_clf\img\home\headlineWidgetPlayBtn.gif" />
+    <Content Include="Content\ubc_clf\img\home\headlineWidgetPrevBtn.gif" />
+    <Content Include="Content\ubc_clf\img\home\headlineWidgetReadMoreBtn.gif" />
+    <Content Include="Content\ubc_clf\img\home\menuArrow.gif" />
+    <Content Include="Content\ubc_clf\img\home\moreBtn.gif" />
+    <Content Include="Content\ubc_clf\img\home\okanaganCampus.jpg" />
+    <Content Include="Content\ubc_clf\img\home\okArrowOff.gif" />
+    <Content Include="Content\ubc_clf\img\home\okArrowOn.gif" />
+    <Content Include="Content\ubc_clf\img\home\okBottomInfoBg.gif" />
+    <Content Include="Content\ubc_clf\img\home\okHeadlineWidgetBg.gif" />
+    <Content Include="Content\ubc_clf\img\home\okHeadlineWidgetNextBtn.gif" />
+    <Content Include="Content\ubc_clf\img\home\okHeadlineWidgetPauseBtn.gif" />
+    <Content Include="Content\ubc_clf\img\home\okHeadlineWidgetPlayBtn.gif" />
+    <Content Include="Content\ubc_clf\img\home\okHeadlineWidgetPrevBtn.gif" />
+    <Content Include="Content\ubc_clf\img\home\okHeadlineWidgetReadMoreBtn.gif" />
+    <Content Include="Content\ubc_clf\img\home\okMoreBtn.gif" />
+    <Content Include="Content\ubc_clf\img\home\okOkanaganCampus.jpg" />
+    <Content Include="Content\ubc_clf\img\home\okSelectedQuickLink.gif" />
+    <Content Include="Content\ubc_clf\img\home\okVancouverCampus.jpg" />
+    <Content Include="Content\ubc_clf\img\home\selectedQuickLink.gif" />
+    <Content Include="Content\ubc_clf\img\home\ubcCallout.gif" />
+    <Content Include="Content\ubc_clf\img\home\vancouverCampus.jpg" />
+    <Content Include="Content\ubc_clf\js\config.js" />
+    <Content Include="Content\ubc_clf\js\jquery-1.3.2.min.js" />
+    <Content Include="Content\ubc_clf\js\jquery.cycle.all.min.js" />
+    <Content Include="Content\ubc_clf\js\main.js" />
+    <Content Include="Content\ubc_clf\js\_notes\dwsync.xml" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="packages.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Account\Web.config" />
+    <Content Include="Content\standard\standard.skin" />
+    <Content Include="Content\ubc_clf\js\main.zip" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Site.Master" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="Bundle.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Site.Mobile.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\AddPhoneNumber.aspx.cs">
+      <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\AddPhoneNumber.aspx.designer.cs">
+      <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Confirm.aspx.cs">
+      <DependentUpon>Confirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Confirm.aspx.designer.cs">
+      <DependentUpon>Confirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Forgot.aspx.cs">
+      <DependentUpon>Forgot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Forgot.aspx.designer.cs">
+      <DependentUpon>Forgot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Lockout.aspx.cs">
+      <DependentUpon>Lockout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Lockout.aspx.designer.cs">
+      <DependentUpon>Lockout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.designer.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ManageLogins.aspx.cs">
+      <DependentUpon>ManageLogins.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ManageLogins.aspx.designer.cs">
+      <DependentUpon>ManageLogins.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ManagePassword.aspx.cs">
+      <DependentUpon>ManagePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ManagePassword.aspx.designer.cs">
+      <DependentUpon>ManagePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.designer.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ResetPasswordConfirmation.aspx.cs">
+      <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ResetPasswordConfirmation.aspx.designer.cs">
+      <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\TwoFactorAuthenticationSignIn.aspx.cs">
+      <DependentUpon>TwoFactorAuthenticationSignIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\TwoFactorAuthenticationSignIn.aspx.designer.cs">
+      <DependentUpon>TwoFactorAuthenticationSignIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\VerifyPhoneNumber.aspx.cs">
+      <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
+      <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1173</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1173/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
