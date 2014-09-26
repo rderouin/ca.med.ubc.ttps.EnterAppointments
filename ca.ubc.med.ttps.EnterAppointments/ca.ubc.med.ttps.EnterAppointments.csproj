@@ -38,6 +38,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AspNet.ScriptManager.jQuery, Version=2.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.2.1.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
@@ -63,9 +67,6 @@
     </Reference>
     <Reference Include="AspNet.ScriptManager.bootstrap">
       <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.0.0\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
-    </Reference>
-    <Reference Include="AspNet.ScriptManager.jQuery">
-      <HintPath>..\packages\AspNet.ScriptManager.jQuery.1.10.2\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ScriptManager.MSAjax">
       <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
@@ -330,11 +331,9 @@
     <Content Include="Account\Web.config" />
     <Content Include="Content\standard\standard.skin" />
     <Content Include="Content\ubc_clf\js\main.zip" />
-    <Content Include="Scripts\jquery\jquery-ui.css" />
-    <Content Include="Scripts\jquery\jquery-ui.min.css" />
-    <Content Include="Scripts\jquery\jquery-ui.min.js" />
-    <Content Include="Scripts\jquery\jquery-ui.structure.min.css" />
-    <Content Include="Scripts\jquery\jquery-ui.theme.min.css" />
+    <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.1.js" />
+    <Content Include="Scripts\jquery-2.1.1.min.js" />
     <Content Include="WebControls\ucPeople.ascx" />
     <EntityDeploy Include="Models\ttpirEntityDataModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -353,11 +352,8 @@
       <DependentUpon>ttpirEntityDataModel.edmx</DependentUpon>
       <LastGenOutput>ttpirEntityDataModel.cs</LastGenOutput>
     </Content>
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -391,8 +387,8 @@
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <None Include="Project_Readme.html" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Site.Mobile.Master" />
+    <Content Include="Scripts\jquery-2.1.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
