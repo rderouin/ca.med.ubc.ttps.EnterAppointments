@@ -1,0 +1,1766 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ttpirDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="APPOINTMENT">
+          <Key>
+            <PropertyRef Name="APPOINTMENT_ID" />
+          </Key>
+          <Property Name="APPOINTMENT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PERSON_ID" Type="int" Nullable="false" />
+          <Property Name="TYPE_ID" Type="int" Nullable="false" />
+          <Property Name="STATE_ID" Type="int" Nullable="false" />
+          <Property Name="STATUS_ID" Type="int" Nullable="false" />
+          <Property Name="CLINICAL_FACULTY_RANK_ID" Type="int" Nullable="false" />
+          <Property Name="DEPARTMENT_ID" Type="int" Nullable="false" />
+          <Property Name="DIVISION_DESC" Type="varchar" MaxLength="75" />
+          <Property Name="HEALTH_AUTHORITY_ID" Type="int" Nullable="false" />
+          <Property Name="APPOINTMENT_START_DT" Type="datetime" />
+          <Property Name="APPOINTMENT_END_DT" Type="datetime" />
+          <Property Name="LAST_UPDT_TS" Type="datetime" />
+          <Property Name="LAST_UPDT_USER" Type="varchar" MaxLength="50" />
+          <Property Name="CREATED_TS" Type="datetime" />
+          <Property Name="CREATED_USER" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="APPOINTMENT_RANK">
+          <Key>
+            <PropertyRef Name="APPOINTMENT_RANK_ID" />
+          </Key>
+          <Property Name="APPOINTMENT_RANK_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="APPOINTMENT_RANK_DESC" Type="varchar" MaxLength="75" />
+          <Property Name="LAST_UPDT_TS" Type="datetime" />
+          <Property Name="LAST_UPDT_USER" Type="varchar" MaxLength="50" />
+          <Property Name="CREATED_TS" Type="datetime" />
+          <Property Name="CREATED_USER" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="APPOINTMENT_ROLE">
+          <Key>
+            <PropertyRef Name="APPOINTMENT_ROLE_ID" />
+          </Key>
+          <Property Name="APPOINTMENT_ROLE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="APPOINTMENT_ID" Type="int" Nullable="false" />
+          <Property Name="ROLE_TYPE_ID" Type="int" Nullable="false" />
+          <Property Name="TEACHES_MD_PRMG_IND" Type="bit" Nullable="false" />
+          <Property Name="MD_UNDERGRAD_PRGM_ID" Type="int" />
+          <Property Name="MD_POSTGRAD_PRGM_IND" Type="bit" />
+          <Property Name="PAYMENT_IND" Type="bit" Nullable="false" />
+          <Property Name="LAST_UPDT_TS" Type="datetime" />
+          <Property Name="LAST_UPDT_USER" Type="varchar" MaxLength="50" />
+          <Property Name="CREATED_TS" Type="datetime" />
+          <Property Name="CREATED_USER" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="APPOINTMENT_ROLE_TYPE">
+          <Key>
+            <PropertyRef Name="APPOINTMENT_ROLE_TYPE_ID" />
+          </Key>
+          <Property Name="APPOINTMENT_ROLE_TYPE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="APPOINTMENT_ROLE_TYPE_DESC" Type="varchar" MaxLength="75" />
+          <Property Name="LAST_UPDT_TS" Type="datetime" />
+          <Property Name="LAST_UPDT_USER" Type="varchar" MaxLength="50" />
+          <Property Name="CREATED_TS" Type="datetime" />
+          <Property Name="CREATED_USER" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="APPOINTMENT_STATE">
+          <Key>
+            <PropertyRef Name="APPOINTMENT_STATE_ID" />
+          </Key>
+          <Property Name="APPOINTMENT_STATE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="APPOINTMENT_STATE_DESC" Type="varchar" MaxLength="75" Nullable="false" />
+          <Property Name="LAST_UPDT_TS" Type="datetime" />
+          <Property Name="LAST_UPDT_USER" Type="varchar" MaxLength="50" />
+          <Property Name="CREATED_TS" Type="datetime" />
+          <Property Name="CREATED_USER" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="APPOINTMENT_STATUS">
+          <Key>
+            <PropertyRef Name="APPOINTMENT_STATUS_ID" />
+          </Key>
+          <Property Name="APPOINTMENT_STATUS_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="APPOINTMENT_STATUS_DESC" Type="varchar" MaxLength="75" Nullable="false" />
+          <Property Name="LAST_UPDT_TS" Type="datetime" />
+          <Property Name="LAST_UPDT_USER" Type="varchar" MaxLength="50" />
+          <Property Name="CREATED_TS" Type="datetime" />
+          <Property Name="CREATED_USER" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="APPOINTMENT_TYPE">
+          <Key>
+            <PropertyRef Name="APPOINTMENT_TYPE_ID" />
+          </Key>
+          <Property Name="APPOINTMENT_TYPE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="APPOINTMENT_TYPE_DESC" Type="varchar" MaxLength="75" />
+          <Property Name="LAST_UPDT_TS" Type="datetime" />
+          <Property Name="LAST_UPDT_USER" Type="varchar" MaxLength="50" />
+          <Property Name="CREATED_TS" Type="datetime" />
+          <Property Name="CREATED_USER" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CONTACT_TYPE">
+          <Key>
+            <PropertyRef Name="CONTACT_TYPE_ID" />
+          </Key>
+          <Property Name="CONTACT_TYPE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CONTACT_TYPE_DESC" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LAST_UPDT_TS" Type="datetime" />
+          <Property Name="LAST_UPDT_USER" Type="varchar" MaxLength="50" />
+          <Property Name="CREATED_TS" Type="datetime" />
+          <Property Name="CREATED_USER" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DEPARTMENT">
+          <Key>
+            <PropertyRef Name="DEPARTMENT_ID" />
+          </Key>
+          <Property Name="DEPARTMENT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DEPARTMENT_DESC" Type="varchar" MaxLength="75" />
+          <Property Name="LAST_UPDT_TS" Type="datetime" />
+          <Property Name="LAST_UPDT_USER" Type="varchar" MaxLength="50" />
+          <Property Name="CREATED_TS" Type="datetime" />
+          <Property Name="CREATED_USER" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="GENDER">
+          <Key>
+            <PropertyRef Name="GENDER_ID" />
+          </Key>
+          <Property Name="GENDER_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GENDER_DESC" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LAST_UPDT_TS" Type="datetime" />
+          <Property Name="LAST_UPDT_USER" Type="varchar" MaxLength="50" />
+          <Property Name="CREATED_TS" Type="datetime" />
+          <Property Name="CREATED_USER" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="HEALTH_AUTHORITY">
+          <Key>
+            <PropertyRef Name="HEALTH_AUTHORITY_ID" />
+          </Key>
+          <Property Name="HEALTH_AUTHORITY_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HEALTH_AUTHORITY_DESC" Type="varchar" MaxLength="75" />
+          <Property Name="LAST_UPDT_TS" Type="datetime" />
+          <Property Name="LAST_UPDT_USER" Type="varchar" MaxLength="50" />
+          <Property Name="CREATED_TS" Type="datetime" />
+          <Property Name="CREATED_USER" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="IS_PROFILE_ACTIVE">
+          <Key>
+            <PropertyRef Name="PROFILE_ACTIVE_ID" />
+          </Key>
+          <Property Name="PROFILE_ACTIVE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ACTIVE_IND" Type="bit" />
+          <Property Name="IND_DESCRIPTION" Type="varchar" MaxLength="10" />
+          <Property Name="LAST_UPDT_TS" Type="datetime" />
+          <Property Name="LAST_UPDT_USER" Type="varchar" MaxLength="50" />
+          <Property Name="CREATED_TS" Type="datetime" />
+          <Property Name="CREATED_USER" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="IS_RETIRED">
+          <Key>
+            <PropertyRef Name="RETIRED_ID" />
+          </Key>
+          <Property Name="RETIRED_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RETIRED_IND" Type="bit" />
+          <Property Name="IND_DESCRIPTION" Type="varchar" MaxLength="10" />
+          <Property Name="LAST_UPDT_TS" Type="datetime" />
+          <Property Name="LAST_UPDT_USER" Type="varchar" MaxLength="50" />
+          <Property Name="CREATED_TS" Type="datetime" />
+          <Property Name="CREATED_USER" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="MD_UNDERGRAD_PROGRAM">
+          <Key>
+            <PropertyRef Name="MD_UNDERGRAD_PROGRAM_ID" />
+          </Key>
+          <Property Name="MD_UNDERGRAD_PROGRAM_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MD_UNDERGRAD_PROGRAM_DESC" Type="varchar" MaxLength="75" />
+          <Property Name="LAST_UPDT_TS" Type="datetime" />
+          <Property Name="LAST_UPDT_USER" Type="varchar" MaxLength="50" />
+          <Property Name="CREATED_TS" Type="datetime" />
+          <Property Name="CREATED_USER" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="OCCUPATION">
+          <Key>
+            <PropertyRef Name="OCCUPATION_ID" />
+          </Key>
+          <Property Name="OCCUPATION_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OCCUPATION_DESC" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LAST_UPDT_TS" Type="datetime" />
+          <Property Name="LAST_UPDT_USER" Type="varchar" MaxLength="50" />
+          <Property Name="CREATED_TS" Type="datetime" />
+          <Property Name="CREATED_USER" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PAYEE">
+          <Key>
+            <PropertyRef Name="PAYEE_ID" />
+          </Key>
+          <Property Name="PAYEE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="APPOINTMENT_ROLE_ID" Type="int" Nullable="false" />
+          <Property Name="PAYEE_TYPE_ID" Type="int" Nullable="false" />
+          <Property Name="ADDRESS_IS_MAILING_IND" Type="bit" />
+          <Property Name="PAYEE_ORGANIZATION_ID" Type="int" Nullable="false" />
+          <Property Name="DELIMITER_CHARACTER" Type="char" MaxLength="1" />
+          <Property Name="GST_STATUS_ID" Type="int" />
+          <Property Name="BUSINESS_NUMB" Type="varchar" MaxLength="50" />
+          <Property Name="SMALL_SUPPLIER_STATUS" Type="varchar" MaxLength="50" />
+          <Property Name="GST_NUMB" Type="varchar" MaxLength="50" />
+          <Property Name="LAST_UPDT_TS" Type="datetime" />
+          <Property Name="LAST_UPDT_USER" Type="varchar" MaxLength="50" />
+          <Property Name="CREATED_TS" Type="datetime" />
+          <Property Name="CREATED_USER" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PAYEE_TYPE">
+          <Key>
+            <PropertyRef Name="PAYEE_TYPE_ID" />
+          </Key>
+          <Property Name="PAYEE_TYPE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PAYEE_TYPE_DESC" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LAST_UPDT_TS" Type="datetime" />
+          <Property Name="LAST_UPDT_USER" Type="varchar" MaxLength="50" />
+          <Property Name="CREATED_TS" Type="datetime" />
+          <Property Name="CREATED_USER" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PAYMENT_ARRANGEMENT">
+          <Key>
+            <PropertyRef Name="PAYMENT_ARRANGEMENT_ID" />
+          </Key>
+          <Property Name="PAYMENT_ARRANGEMENT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PAYMENT_ARRANGEMENT_DESC" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LAST_UPDT_TS" Type="datetime" />
+          <Property Name="LAST_UPDT_USER" Type="varchar" MaxLength="50" />
+          <Property Name="CREATED_TS" Type="datetime" />
+          <Property Name="CREATED_USER" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PAYMENT_INFO">
+          <Key>
+            <PropertyRef Name="PAYMENT_INFO_ID" />
+          </Key>
+          <Property Name="PAYMENT_INFO_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PAYEE_ID" Type="int" Nullable="false" />
+          <Property Name="PAYMENT_METHOD_ID" Type="int" Nullable="false" />
+          <Property Name="SPECIAL_CHEQUE_HANDLING_IND" Type="bit" />
+          <Property Name="UBC_VENDOR_NUMB" Type="varchar" MaxLength="50" />
+          <Property Name="UVIC_VENDOR_NUMB" Type="varchar" MaxLength="50" />
+          <Property Name="UNBC_VENDOR_NUMB" Type="varchar" MaxLength="50" />
+          <Property Name="LAST_UPDT_TS" Type="datetime" />
+          <Property Name="LAST_UPDT_USER" Type="varchar" MaxLength="50" />
+          <Property Name="CREATED_TS" Type="datetime" />
+          <Property Name="CREATED_USER" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PERSON">
+          <Key>
+            <PropertyRef Name="PERSON_ID" />
+          </Key>
+          <Property Name="PERSON_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UBC_ID" Type="varchar" MaxLength="75" Nullable="false" />
+          <Property Name="IS_ACTIVE_PROFILE" Type="bit" />
+          <Property Name="IS_RETIRED" Type="bit" />
+          <Property Name="HAS_ALTERNATE_NAME" Type="bit" />
+          <Property Name="PREFERRED_NAME" Type="varchar" MaxLength="50" />
+          <Property Name="FIRST_NAME" Type="varchar" MaxLength="75" Nullable="false" />
+          <Property Name="MIDDLE_NAME" Type="varchar" MaxLength="75" Nullable="false" />
+          <Property Name="LAST_NAME" Type="varchar" MaxLength="75" Nullable="false" />
+          <Property Name="SALUTATION_PREFIX" Type="varchar" MaxLength="10" />
+          <Property Name="ALTERNATE_FIRST_NAME" Type="varchar" MaxLength="75" />
+          <Property Name="ALTERNATE_MIDDLE_NAME" Type="varchar" MaxLength="75" Nullable="false" />
+          <Property Name="ALTERNATE_LAST_NAME" Type="varchar" MaxLength="75" Nullable="false" />
+          <Property Name="DATE_OF_BIRTH" Type="datetime" />
+          <Property Name="GENDER_ID" Type="int" Nullable="false" />
+          <Property Name="OCCUPATION_ID" Type="int" />
+          <Property Name="PAYMENT_ARRANGMENT_ID" Type="int" Nullable="false" />
+          <Property Name="LAST_UPDT_TS" Type="datetime" />
+          <Property Name="LAST_UPDT_USER" Type="varchar" MaxLength="50" />
+          <Property Name="CREATED_TS" Type="datetime" />
+          <Property Name="CREATED_USER" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PHONE_NUMBER_TYPE">
+          <Key>
+            <PropertyRef Name="PHONE_NUMBER_TYPE_ID" />
+          </Key>
+          <Property Name="PHONE_NUMBER_TYPE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PHONE_NUMBER_TYPE_DESC" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LAST_UPDT_TS" Type="datetime" />
+          <Property Name="LAST_UPDT_USER" Type="varchar" MaxLength="50" />
+          <Property Name="CREATED_TS" Type="datetime" />
+          <Property Name="CREATED_USER" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PROVINCE_STATE">
+          <Key>
+            <PropertyRef Name="PROVINCE_STATE_ID" />
+          </Key>
+          <Property Name="PROVINCE_STATE_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PROVINCE_STATE_DESC" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PROVINCE_STATE_ABBREV" Type="varchar" MaxLength="10" />
+          <Property Name="LAST_UPDT_TS" Type="datetime" />
+          <Property Name="LAST_UPDT_USER" Type="varchar" MaxLength="50" />
+          <Property Name="CREATED_TS" Type="datetime" />
+          <Property Name="CREATED_USER" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SALUTATIONS">
+          <Key>
+            <PropertyRef Name="SALUTATION_ID" />
+          </Key>
+          <Property Name="SALUTATION_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SALUTATION_PREFIX" Type="varchar" MaxLength="10" />
+          <Property Name="LAST_UPDT_TS" Type="datetime" />
+          <Property Name="LAST_UPDT_USER" Type="varchar" MaxLength="50" />
+          <Property Name="CREATED_TS" Type="datetime" />
+          <Property Name="CREATED_USER" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TTPS_CONTACT_INFO">
+          <Key>
+            <PropertyRef Name="TTPS_CONTACT_ID" />
+          </Key>
+          <Property Name="TTPS_CONTACT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PERSON_ID" Type="int" Nullable="false" />
+          <Property Name="CONTACT_TYPE_ID" Type="int" Nullable="false" />
+          <Property Name="PRIMARY_EMAIL_ADDRESS" Type="varchar" MaxLength="75" />
+          <Property Name="PRIMARY_PHONE_NUMB" Type="varchar" MaxLength="25" />
+          <Property Name="PHONE_NUMBER_EXTENSION" Type="varchar" MaxLength="25" />
+          <Property Name="PHONE_NUMBER_TYPE_ID" Type="int" />
+          <Property Name="ALTERNATE_PHONE_NUMB" Type="varchar" MaxLength="25" />
+          <Property Name="RECIPIENT_NAME" Type="varchar" MaxLength="75" />
+          <Property Name="ADDRESS_LINE_1" Type="varchar" MaxLength="75" />
+          <Property Name="ADDRESS_LINE_2" Type="varchar" MaxLength="75" />
+          <Property Name="SUBURB_DESC" Type="varchar" MaxLength="75" />
+          <Property Name="MAILING_CD" Type="varchar" MaxLength="25" />
+          <Property Name="CITY_NAME" Type="varchar" MaxLength="75" />
+          <Property Name="PROV_OR_STATE_ID" Type="int" />
+          <Property Name="COUNTRY_NAME" Type="varchar" MaxLength="75" />
+          <Property Name="LAST_UPDT_TS" Type="datetime" />
+          <Property Name="LAST_UPDT_USER" Type="varchar" MaxLength="50" />
+          <Property Name="CREATED_TS" Type="datetime" />
+          <Property Name="CREATED_USER" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_APPOINTMENT_APPOINTMENT_RANK">
+          <End Role="APPOINTMENT_RANK" Type="Self.APPOINTMENT_RANK" Multiplicity="1" />
+          <End Role="APPOINTMENT" Type="Self.APPOINTMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="APPOINTMENT_RANK">
+              <PropertyRef Name="APPOINTMENT_RANK_ID" />
+            </Principal>
+            <Dependent Role="APPOINTMENT">
+              <PropertyRef Name="CLINICAL_FACULTY_RANK_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_APPOINTMENT_APPOINTMENT_STATE">
+          <End Role="APPOINTMENT_STATE" Type="Self.APPOINTMENT_STATE" Multiplicity="1" />
+          <End Role="APPOINTMENT" Type="Self.APPOINTMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="APPOINTMENT_STATE">
+              <PropertyRef Name="APPOINTMENT_STATE_ID" />
+            </Principal>
+            <Dependent Role="APPOINTMENT">
+              <PropertyRef Name="STATE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_APPOINTMENT_APPOINTMENT_STATUS">
+          <End Role="APPOINTMENT_STATUS" Type="Self.APPOINTMENT_STATUS" Multiplicity="1" />
+          <End Role="APPOINTMENT" Type="Self.APPOINTMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="APPOINTMENT_STATUS">
+              <PropertyRef Name="APPOINTMENT_STATUS_ID" />
+            </Principal>
+            <Dependent Role="APPOINTMENT">
+              <PropertyRef Name="STATUS_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_APPOINTMENT_APPOINTMENT_TYPE">
+          <End Role="APPOINTMENT_TYPE" Type="Self.APPOINTMENT_TYPE" Multiplicity="1" />
+          <End Role="APPOINTMENT" Type="Self.APPOINTMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="APPOINTMENT_TYPE">
+              <PropertyRef Name="APPOINTMENT_TYPE_ID" />
+            </Principal>
+            <Dependent Role="APPOINTMENT">
+              <PropertyRef Name="TYPE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_APPOINTMENT_DEPARTMENT">
+          <End Role="DEPARTMENT" Type="Self.DEPARTMENT" Multiplicity="1" />
+          <End Role="APPOINTMENT" Type="Self.APPOINTMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DEPARTMENT">
+              <PropertyRef Name="DEPARTMENT_ID" />
+            </Principal>
+            <Dependent Role="APPOINTMENT">
+              <PropertyRef Name="DEPARTMENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_APPOINTMENT_HEALTH_AUTHORITY">
+          <End Role="HEALTH_AUTHORITY" Type="Self.HEALTH_AUTHORITY" Multiplicity="1" />
+          <End Role="APPOINTMENT" Type="Self.APPOINTMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HEALTH_AUTHORITY">
+              <PropertyRef Name="HEALTH_AUTHORITY_ID" />
+            </Principal>
+            <Dependent Role="APPOINTMENT">
+              <PropertyRef Name="HEALTH_AUTHORITY_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_APPOINTMENT_PERSON1">
+          <End Role="PERSON" Type="Self.PERSON" Multiplicity="1" />
+          <End Role="APPOINTMENT" Type="Self.APPOINTMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERSON">
+              <PropertyRef Name="PERSON_ID" />
+            </Principal>
+            <Dependent Role="APPOINTMENT">
+              <PropertyRef Name="PERSON_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_APPOINTMENT_ROLE_APPOINTMENT">
+          <End Role="APPOINTMENT" Type="Self.APPOINTMENT" Multiplicity="1" />
+          <End Role="APPOINTMENT_ROLE" Type="Self.APPOINTMENT_ROLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="APPOINTMENT">
+              <PropertyRef Name="APPOINTMENT_ID" />
+            </Principal>
+            <Dependent Role="APPOINTMENT_ROLE">
+              <PropertyRef Name="APPOINTMENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_APPOINTMENT_ROLE_APPOINTMENT_ROLE_TYPE">
+          <End Role="APPOINTMENT_ROLE_TYPE" Type="Self.APPOINTMENT_ROLE_TYPE" Multiplicity="1" />
+          <End Role="APPOINTMENT_ROLE" Type="Self.APPOINTMENT_ROLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="APPOINTMENT_ROLE_TYPE">
+              <PropertyRef Name="APPOINTMENT_ROLE_TYPE_ID" />
+            </Principal>
+            <Dependent Role="APPOINTMENT_ROLE">
+              <PropertyRef Name="ROLE_TYPE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_APPOINTMENT_ROLE_MD_UNDERGRAD_PROGRAM">
+          <End Role="MD_UNDERGRAD_PROGRAM" Type="Self.MD_UNDERGRAD_PROGRAM" Multiplicity="0..1" />
+          <End Role="APPOINTMENT_ROLE" Type="Self.APPOINTMENT_ROLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MD_UNDERGRAD_PROGRAM">
+              <PropertyRef Name="MD_UNDERGRAD_PROGRAM_ID" />
+            </Principal>
+            <Dependent Role="APPOINTMENT_ROLE">
+              <PropertyRef Name="MD_UNDERGRAD_PRGM_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PAYEE_APPOINTMENT_ROLE">
+          <End Role="APPOINTMENT_ROLE" Type="Self.APPOINTMENT_ROLE" Multiplicity="1" />
+          <End Role="PAYEE" Type="Self.PAYEE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="APPOINTMENT_ROLE">
+              <PropertyRef Name="APPOINTMENT_ROLE_ID" />
+            </Principal>
+            <Dependent Role="PAYEE">
+              <PropertyRef Name="APPOINTMENT_ROLE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PAYEE_PAYEE_TYPE">
+          <End Role="PAYEE_TYPE" Type="Self.PAYEE_TYPE" Multiplicity="1" />
+          <End Role="PAYEE" Type="Self.PAYEE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PAYEE_TYPE">
+              <PropertyRef Name="PAYEE_TYPE_ID" />
+            </Principal>
+            <Dependent Role="PAYEE">
+              <PropertyRef Name="PAYEE_TYPE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PAYMENT_INFO_PAYEE">
+          <End Role="PAYEE" Type="Self.PAYEE" Multiplicity="1" />
+          <End Role="PAYMENT_INFO" Type="Self.PAYMENT_INFO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PAYEE">
+              <PropertyRef Name="PAYEE_ID" />
+            </Principal>
+            <Dependent Role="PAYMENT_INFO">
+              <PropertyRef Name="PAYEE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PERSON_GENDER">
+          <End Role="GENDER" Type="Self.GENDER" Multiplicity="1" />
+          <End Role="PERSON" Type="Self.PERSON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GENDER">
+              <PropertyRef Name="GENDER_ID" />
+            </Principal>
+            <Dependent Role="PERSON">
+              <PropertyRef Name="GENDER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PERSON_OCCUPATION">
+          <End Role="OCCUPATION" Type="Self.OCCUPATION" Multiplicity="0..1" />
+          <End Role="PERSON" Type="Self.PERSON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OCCUPATION">
+              <PropertyRef Name="OCCUPATION_ID" />
+            </Principal>
+            <Dependent Role="PERSON">
+              <PropertyRef Name="OCCUPATION_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PERSON_PAYMENT_ARRANGEMENT">
+          <End Role="PAYMENT_ARRANGEMENT" Type="Self.PAYMENT_ARRANGEMENT" Multiplicity="1" />
+          <End Role="PERSON" Type="Self.PERSON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PAYMENT_ARRANGEMENT">
+              <PropertyRef Name="PAYMENT_ARRANGEMENT_ID" />
+            </Principal>
+            <Dependent Role="PERSON">
+              <PropertyRef Name="PAYMENT_ARRANGMENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TTPS_CONTACT_INFO_CONTACT_TYPE1">
+          <End Role="CONTACT_TYPE" Type="Self.CONTACT_TYPE" Multiplicity="1" />
+          <End Role="TTPS_CONTACT_INFO" Type="Self.TTPS_CONTACT_INFO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CONTACT_TYPE">
+              <PropertyRef Name="CONTACT_TYPE_ID" />
+            </Principal>
+            <Dependent Role="TTPS_CONTACT_INFO">
+              <PropertyRef Name="CONTACT_TYPE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TTPS_CONTACT_INFO_PERSON">
+          <End Role="PERSON" Type="Self.PERSON" Multiplicity="1" />
+          <End Role="TTPS_CONTACT_INFO" Type="Self.TTPS_CONTACT_INFO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERSON">
+              <PropertyRef Name="PERSON_ID" />
+            </Principal>
+            <Dependent Role="TTPS_CONTACT_INFO">
+              <PropertyRef Name="PERSON_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TTPS_CONTACT_INFO_PHONE_NUMBER_TYPE1">
+          <End Role="PHONE_NUMBER_TYPE" Type="Self.PHONE_NUMBER_TYPE" Multiplicity="0..1" />
+          <End Role="TTPS_CONTACT_INFO" Type="Self.TTPS_CONTACT_INFO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PHONE_NUMBER_TYPE">
+              <PropertyRef Name="PHONE_NUMBER_TYPE_ID" />
+            </Principal>
+            <Dependent Role="TTPS_CONTACT_INFO">
+              <PropertyRef Name="PHONE_NUMBER_TYPE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TTPS_CONTACT_INFO_PROVINCE_STATE">
+          <End Role="PROVINCE_STATE" Type="Self.PROVINCE_STATE" Multiplicity="0..1" />
+          <End Role="TTPS_CONTACT_INFO" Type="Self.TTPS_CONTACT_INFO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROVINCE_STATE">
+              <PropertyRef Name="PROVINCE_STATE_ID" />
+            </Principal>
+            <Dependent Role="TTPS_CONTACT_INFO">
+              <PropertyRef Name="PROV_OR_STATE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ttpirDataModelStoreContainer">
+          <EntitySet Name="APPOINTMENT" EntityType="Self.APPOINTMENT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="APPOINTMENT_RANK" EntityType="Self.APPOINTMENT_RANK" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="APPOINTMENT_ROLE" EntityType="Self.APPOINTMENT_ROLE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="APPOINTMENT_ROLE_TYPE" EntityType="Self.APPOINTMENT_ROLE_TYPE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="APPOINTMENT_STATE" EntityType="Self.APPOINTMENT_STATE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="APPOINTMENT_STATUS" EntityType="Self.APPOINTMENT_STATUS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="APPOINTMENT_TYPE" EntityType="Self.APPOINTMENT_TYPE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CONTACT_TYPE" EntityType="Self.CONTACT_TYPE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DEPARTMENT" EntityType="Self.DEPARTMENT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GENDER" EntityType="Self.GENDER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HEALTH_AUTHORITY" EntityType="Self.HEALTH_AUTHORITY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IS_PROFILE_ACTIVE" EntityType="Self.IS_PROFILE_ACTIVE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IS_RETIRED" EntityType="Self.IS_RETIRED" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MD_UNDERGRAD_PROGRAM" EntityType="Self.MD_UNDERGRAD_PROGRAM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OCCUPATION" EntityType="Self.OCCUPATION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PAYEE" EntityType="Self.PAYEE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PAYEE_TYPE" EntityType="Self.PAYEE_TYPE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PAYMENT_ARRANGEMENT" EntityType="Self.PAYMENT_ARRANGEMENT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PAYMENT_INFO" EntityType="Self.PAYMENT_INFO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PERSON" EntityType="Self.PERSON" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PHONE_NUMBER_TYPE" EntityType="Self.PHONE_NUMBER_TYPE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PROVINCE_STATE" EntityType="Self.PROVINCE_STATE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SALUTATIONS" EntityType="Self.SALUTATIONS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TTPS_CONTACT_INFO" EntityType="Self.TTPS_CONTACT_INFO" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_APPOINTMENT_APPOINTMENT_RANK" Association="Self.FK_APPOINTMENT_APPOINTMENT_RANK">
+            <End Role="APPOINTMENT_RANK" EntitySet="APPOINTMENT_RANK" />
+            <End Role="APPOINTMENT" EntitySet="APPOINTMENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_APPOINTMENT_APPOINTMENT_STATE" Association="Self.FK_APPOINTMENT_APPOINTMENT_STATE">
+            <End Role="APPOINTMENT_STATE" EntitySet="APPOINTMENT_STATE" />
+            <End Role="APPOINTMENT" EntitySet="APPOINTMENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_APPOINTMENT_APPOINTMENT_STATUS" Association="Self.FK_APPOINTMENT_APPOINTMENT_STATUS">
+            <End Role="APPOINTMENT_STATUS" EntitySet="APPOINTMENT_STATUS" />
+            <End Role="APPOINTMENT" EntitySet="APPOINTMENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_APPOINTMENT_APPOINTMENT_TYPE" Association="Self.FK_APPOINTMENT_APPOINTMENT_TYPE">
+            <End Role="APPOINTMENT_TYPE" EntitySet="APPOINTMENT_TYPE" />
+            <End Role="APPOINTMENT" EntitySet="APPOINTMENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_APPOINTMENT_DEPARTMENT" Association="Self.FK_APPOINTMENT_DEPARTMENT">
+            <End Role="DEPARTMENT" EntitySet="DEPARTMENT" />
+            <End Role="APPOINTMENT" EntitySet="APPOINTMENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_APPOINTMENT_HEALTH_AUTHORITY" Association="Self.FK_APPOINTMENT_HEALTH_AUTHORITY">
+            <End Role="HEALTH_AUTHORITY" EntitySet="HEALTH_AUTHORITY" />
+            <End Role="APPOINTMENT" EntitySet="APPOINTMENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_APPOINTMENT_PERSON1" Association="Self.FK_APPOINTMENT_PERSON1">
+            <End Role="PERSON" EntitySet="PERSON" />
+            <End Role="APPOINTMENT" EntitySet="APPOINTMENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_APPOINTMENT_ROLE_APPOINTMENT" Association="Self.FK_APPOINTMENT_ROLE_APPOINTMENT">
+            <End Role="APPOINTMENT" EntitySet="APPOINTMENT" />
+            <End Role="APPOINTMENT_ROLE" EntitySet="APPOINTMENT_ROLE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_APPOINTMENT_ROLE_APPOINTMENT_ROLE_TYPE" Association="Self.FK_APPOINTMENT_ROLE_APPOINTMENT_ROLE_TYPE">
+            <End Role="APPOINTMENT_ROLE_TYPE" EntitySet="APPOINTMENT_ROLE_TYPE" />
+            <End Role="APPOINTMENT_ROLE" EntitySet="APPOINTMENT_ROLE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_APPOINTMENT_ROLE_MD_UNDERGRAD_PROGRAM" Association="Self.FK_APPOINTMENT_ROLE_MD_UNDERGRAD_PROGRAM">
+            <End Role="MD_UNDERGRAD_PROGRAM" EntitySet="MD_UNDERGRAD_PROGRAM" />
+            <End Role="APPOINTMENT_ROLE" EntitySet="APPOINTMENT_ROLE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PAYEE_APPOINTMENT_ROLE" Association="Self.FK_PAYEE_APPOINTMENT_ROLE">
+            <End Role="APPOINTMENT_ROLE" EntitySet="APPOINTMENT_ROLE" />
+            <End Role="PAYEE" EntitySet="PAYEE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PAYEE_PAYEE_TYPE" Association="Self.FK_PAYEE_PAYEE_TYPE">
+            <End Role="PAYEE_TYPE" EntitySet="PAYEE_TYPE" />
+            <End Role="PAYEE" EntitySet="PAYEE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PAYMENT_INFO_PAYEE" Association="Self.FK_PAYMENT_INFO_PAYEE">
+            <End Role="PAYEE" EntitySet="PAYEE" />
+            <End Role="PAYMENT_INFO" EntitySet="PAYMENT_INFO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PERSON_GENDER" Association="Self.FK_PERSON_GENDER">
+            <End Role="GENDER" EntitySet="GENDER" />
+            <End Role="PERSON" EntitySet="PERSON" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PERSON_OCCUPATION" Association="Self.FK_PERSON_OCCUPATION">
+            <End Role="OCCUPATION" EntitySet="OCCUPATION" />
+            <End Role="PERSON" EntitySet="PERSON" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PERSON_PAYMENT_ARRANGEMENT" Association="Self.FK_PERSON_PAYMENT_ARRANGEMENT">
+            <End Role="PAYMENT_ARRANGEMENT" EntitySet="PAYMENT_ARRANGEMENT" />
+            <End Role="PERSON" EntitySet="PERSON" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TTPS_CONTACT_INFO_CONTACT_TYPE1" Association="Self.FK_TTPS_CONTACT_INFO_CONTACT_TYPE1">
+            <End Role="CONTACT_TYPE" EntitySet="CONTACT_TYPE" />
+            <End Role="TTPS_CONTACT_INFO" EntitySet="TTPS_CONTACT_INFO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TTPS_CONTACT_INFO_PERSON" Association="Self.FK_TTPS_CONTACT_INFO_PERSON">
+            <End Role="PERSON" EntitySet="PERSON" />
+            <End Role="TTPS_CONTACT_INFO" EntitySet="TTPS_CONTACT_INFO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TTPS_CONTACT_INFO_PHONE_NUMBER_TYPE1" Association="Self.FK_TTPS_CONTACT_INFO_PHONE_NUMBER_TYPE1">
+            <End Role="PHONE_NUMBER_TYPE" EntitySet="PHONE_NUMBER_TYPE" />
+            <End Role="TTPS_CONTACT_INFO" EntitySet="TTPS_CONTACT_INFO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TTPS_CONTACT_INFO_PROVINCE_STATE" Association="Self.FK_TTPS_CONTACT_INFO_PROVINCE_STATE">
+            <End Role="PROVINCE_STATE" EntitySet="PROVINCE_STATE" />
+            <End Role="TTPS_CONTACT_INFO" EntitySet="TTPS_CONTACT_INFO" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ttpirDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="APPOINTMENT">
+          <Key>
+            <PropertyRef Name="APPOINTMENT_ID" />
+          </Key>
+          <Property Name="APPOINTMENT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PERSON_ID" Type="Int32" Nullable="false" />
+          <Property Name="TYPE_ID" Type="Int32" Nullable="false" />
+          <Property Name="STATE_ID" Type="Int32" Nullable="false" />
+          <Property Name="STATUS_ID" Type="Int32" Nullable="false" />
+          <Property Name="CLINICAL_FACULTY_RANK_ID" Type="Int32" Nullable="false" />
+          <Property Name="DEPARTMENT_ID" Type="Int32" Nullable="false" />
+          <Property Name="DIVISION_DESC" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="HEALTH_AUTHORITY_ID" Type="Int32" Nullable="false" />
+          <Property Name="APPOINTMENT_START_DT" Type="DateTime" Precision="3" />
+          <Property Name="APPOINTMENT_END_DT" Type="DateTime" Precision="3" />
+          <Property Name="LAST_UPDT_TS" Type="DateTime" Precision="3" />
+          <Property Name="LAST_UPDT_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_TS" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="APPOINTMENT_RANK" Relationship="Self.FK_APPOINTMENT_APPOINTMENT_RANK" FromRole="APPOINTMENT" ToRole="APPOINTMENT_RANK" />
+          <NavigationProperty Name="APPOINTMENT_STATE" Relationship="Self.FK_APPOINTMENT_APPOINTMENT_STATE" FromRole="APPOINTMENT" ToRole="APPOINTMENT_STATE" />
+          <NavigationProperty Name="APPOINTMENT_STATUS" Relationship="Self.FK_APPOINTMENT_APPOINTMENT_STATUS" FromRole="APPOINTMENT" ToRole="APPOINTMENT_STATUS" />
+          <NavigationProperty Name="APPOINTMENT_TYPE" Relationship="Self.FK_APPOINTMENT_APPOINTMENT_TYPE" FromRole="APPOINTMENT" ToRole="APPOINTMENT_TYPE" />
+          <NavigationProperty Name="DEPARTMENT" Relationship="Self.FK_APPOINTMENT_DEPARTMENT" FromRole="APPOINTMENT" ToRole="DEPARTMENT" />
+          <NavigationProperty Name="HEALTH_AUTHORITY" Relationship="Self.FK_APPOINTMENT_HEALTH_AUTHORITY" FromRole="APPOINTMENT" ToRole="HEALTH_AUTHORITY" />
+          <NavigationProperty Name="PERSON" Relationship="Self.FK_APPOINTMENT_PERSON1" FromRole="APPOINTMENT" ToRole="PERSON" />
+          <NavigationProperty Name="APPOINTMENT_ROLE" Relationship="Self.FK_APPOINTMENT_ROLE_APPOINTMENT" FromRole="APPOINTMENT" ToRole="APPOINTMENT_ROLE" />
+        </EntityType>
+        <EntityType Name="APPOINTMENT_RANK">
+          <Key>
+            <PropertyRef Name="APPOINTMENT_RANK_ID" />
+          </Key>
+          <Property Name="APPOINTMENT_RANK_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="APPOINTMENT_RANK_DESC" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="LAST_UPDT_TS" Type="DateTime" Precision="3" />
+          <Property Name="LAST_UPDT_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_TS" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="APPOINTMENTs" Relationship="Self.FK_APPOINTMENT_APPOINTMENT_RANK" FromRole="APPOINTMENT_RANK" ToRole="APPOINTMENT" />
+        </EntityType>
+        <EntityType Name="APPOINTMENT_ROLE">
+          <Key>
+            <PropertyRef Name="APPOINTMENT_ROLE_ID" />
+          </Key>
+          <Property Name="APPOINTMENT_ROLE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="APPOINTMENT_ID" Type="Int32" Nullable="false" />
+          <Property Name="ROLE_TYPE_ID" Type="Int32" Nullable="false" />
+          <Property Name="TEACHES_MD_PRMG_IND" Type="Boolean" Nullable="false" />
+          <Property Name="MD_UNDERGRAD_PRGM_ID" Type="Int32" />
+          <Property Name="MD_POSTGRAD_PRGM_IND" Type="Boolean" />
+          <Property Name="PAYMENT_IND" Type="Boolean" Nullable="false" />
+          <Property Name="LAST_UPDT_TS" Type="DateTime" Precision="3" />
+          <Property Name="LAST_UPDT_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_TS" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="APPOINTMENT" Relationship="Self.FK_APPOINTMENT_ROLE_APPOINTMENT" FromRole="APPOINTMENT_ROLE" ToRole="APPOINTMENT" />
+          <NavigationProperty Name="APPOINTMENT_ROLE_TYPE" Relationship="Self.FK_APPOINTMENT_ROLE_APPOINTMENT_ROLE_TYPE" FromRole="APPOINTMENT_ROLE" ToRole="APPOINTMENT_ROLE_TYPE" />
+          <NavigationProperty Name="MD_UNDERGRAD_PROGRAM" Relationship="Self.FK_APPOINTMENT_ROLE_MD_UNDERGRAD_PROGRAM" FromRole="APPOINTMENT_ROLE" ToRole="MD_UNDERGRAD_PROGRAM" />
+          <NavigationProperty Name="PAYEEs" Relationship="Self.FK_PAYEE_APPOINTMENT_ROLE" FromRole="APPOINTMENT_ROLE" ToRole="PAYEE" />
+        </EntityType>
+        <EntityType Name="APPOINTMENT_ROLE_TYPE">
+          <Key>
+            <PropertyRef Name="APPOINTMENT_ROLE_TYPE_ID" />
+          </Key>
+          <Property Name="APPOINTMENT_ROLE_TYPE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="APPOINTMENT_ROLE_TYPE_DESC" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="LAST_UPDT_TS" Type="DateTime" Precision="3" />
+          <Property Name="LAST_UPDT_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_TS" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="APPOINTMENT_ROLE" Relationship="Self.FK_APPOINTMENT_ROLE_APPOINTMENT_ROLE_TYPE" FromRole="APPOINTMENT_ROLE_TYPE" ToRole="APPOINTMENT_ROLE" />
+        </EntityType>
+        <EntityType Name="APPOINTMENT_STATE">
+          <Key>
+            <PropertyRef Name="APPOINTMENT_STATE_ID" />
+          </Key>
+          <Property Name="APPOINTMENT_STATE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="APPOINTMENT_STATE_DESC" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LAST_UPDT_TS" Type="DateTime" Precision="3" />
+          <Property Name="LAST_UPDT_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_TS" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="APPOINTMENTs" Relationship="Self.FK_APPOINTMENT_APPOINTMENT_STATE" FromRole="APPOINTMENT_STATE" ToRole="APPOINTMENT" />
+        </EntityType>
+        <EntityType Name="APPOINTMENT_STATUS">
+          <Key>
+            <PropertyRef Name="APPOINTMENT_STATUS_ID" />
+          </Key>
+          <Property Name="APPOINTMENT_STATUS_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="APPOINTMENT_STATUS_DESC" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LAST_UPDT_TS" Type="DateTime" Precision="3" />
+          <Property Name="LAST_UPDT_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_TS" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="APPOINTMENTs" Relationship="Self.FK_APPOINTMENT_APPOINTMENT_STATUS" FromRole="APPOINTMENT_STATUS" ToRole="APPOINTMENT" />
+        </EntityType>
+        <EntityType Name="APPOINTMENT_TYPE">
+          <Key>
+            <PropertyRef Name="APPOINTMENT_TYPE_ID" />
+          </Key>
+          <Property Name="APPOINTMENT_TYPE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="APPOINTMENT_TYPE_DESC" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="LAST_UPDT_TS" Type="DateTime" Precision="3" />
+          <Property Name="LAST_UPDT_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_TS" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="APPOINTMENTs" Relationship="Self.FK_APPOINTMENT_APPOINTMENT_TYPE" FromRole="APPOINTMENT_TYPE" ToRole="APPOINTMENT" />
+        </EntityType>
+        <EntityType Name="CONTACT_TYPE">
+          <Key>
+            <PropertyRef Name="CONTACT_TYPE_ID" />
+          </Key>
+          <Property Name="CONTACT_TYPE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CONTACT_TYPE_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LAST_UPDT_TS" Type="DateTime" Precision="3" />
+          <Property Name="LAST_UPDT_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_TS" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TTPS_CONTACT_INFO" Relationship="Self.FK_TTPS_CONTACT_INFO_CONTACT_TYPE1" FromRole="CONTACT_TYPE" ToRole="TTPS_CONTACT_INFO" />
+        </EntityType>
+        <EntityType Name="DEPARTMENT">
+          <Key>
+            <PropertyRef Name="DEPARTMENT_ID" />
+          </Key>
+          <Property Name="DEPARTMENT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DEPARTMENT_DESC" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="LAST_UPDT_TS" Type="DateTime" Precision="3" />
+          <Property Name="LAST_UPDT_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_TS" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="APPOINTMENTs" Relationship="Self.FK_APPOINTMENT_DEPARTMENT" FromRole="DEPARTMENT" ToRole="APPOINTMENT" />
+        </EntityType>
+        <EntityType Name="GENDER">
+          <Key>
+            <PropertyRef Name="GENDER_ID" />
+          </Key>
+          <Property Name="GENDER_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GENDER_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LAST_UPDT_TS" Type="DateTime" Precision="3" />
+          <Property Name="LAST_UPDT_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_TS" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="People" Relationship="Self.FK_PERSON_GENDER" FromRole="GENDER" ToRole="PERSON" />
+        </EntityType>
+        <EntityType Name="HEALTH_AUTHORITY">
+          <Key>
+            <PropertyRef Name="HEALTH_AUTHORITY_ID" />
+          </Key>
+          <Property Name="HEALTH_AUTHORITY_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HEALTH_AUTHORITY_DESC" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="LAST_UPDT_TS" Type="DateTime" Precision="3" />
+          <Property Name="LAST_UPDT_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_TS" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="APPOINTMENTs" Relationship="Self.FK_APPOINTMENT_HEALTH_AUTHORITY" FromRole="HEALTH_AUTHORITY" ToRole="APPOINTMENT" />
+        </EntityType>
+        <EntityType Name="MD_UNDERGRAD_PROGRAM">
+          <Key>
+            <PropertyRef Name="MD_UNDERGRAD_PROGRAM_ID" />
+          </Key>
+          <Property Name="MD_UNDERGRAD_PROGRAM_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MD_UNDERGRAD_PROGRAM_DESC" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="LAST_UPDT_TS" Type="DateTime" Precision="3" />
+          <Property Name="LAST_UPDT_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_TS" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="APPOINTMENT_ROLE" Relationship="Self.FK_APPOINTMENT_ROLE_MD_UNDERGRAD_PROGRAM" FromRole="MD_UNDERGRAD_PROGRAM" ToRole="APPOINTMENT_ROLE" />
+        </EntityType>
+        <EntityType Name="OCCUPATION">
+          <Key>
+            <PropertyRef Name="OCCUPATION_ID" />
+          </Key>
+          <Property Name="OCCUPATION_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OCCUPATION_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LAST_UPDT_TS" Type="DateTime" Precision="3" />
+          <Property Name="LAST_UPDT_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_TS" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="People" Relationship="Self.FK_PERSON_OCCUPATION" FromRole="OCCUPATION" ToRole="PERSON" />
+        </EntityType>
+        <EntityType Name="PAYEE">
+          <Key>
+            <PropertyRef Name="PAYEE_ID" />
+          </Key>
+          <Property Name="PAYEE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="APPOINTMENT_ROLE_ID" Type="Int32" Nullable="false" />
+          <Property Name="PAYEE_TYPE_ID" Type="Int32" Nullable="false" />
+          <Property Name="ADDRESS_IS_MAILING_IND" Type="Boolean" />
+          <Property Name="PAYEE_ORGANIZATION_ID" Type="Int32" Nullable="false" />
+          <Property Name="DELIMITER_CHARACTER" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="GST_STATUS_ID" Type="Int32" />
+          <Property Name="BUSINESS_NUMB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SMALL_SUPPLIER_STATUS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GST_NUMB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LAST_UPDT_TS" Type="DateTime" Precision="3" />
+          <Property Name="LAST_UPDT_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_TS" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="APPOINTMENT_ROLE" Relationship="Self.FK_PAYEE_APPOINTMENT_ROLE" FromRole="PAYEE" ToRole="APPOINTMENT_ROLE" />
+          <NavigationProperty Name="PAYEE_TYPE" Relationship="Self.FK_PAYEE_PAYEE_TYPE" FromRole="PAYEE" ToRole="PAYEE_TYPE" />
+          <NavigationProperty Name="PAYMENT_INFO" Relationship="Self.FK_PAYMENT_INFO_PAYEE" FromRole="PAYEE" ToRole="PAYMENT_INFO" />
+        </EntityType>
+        <EntityType Name="PAYEE_TYPE">
+          <Key>
+            <PropertyRef Name="PAYEE_TYPE_ID" />
+          </Key>
+          <Property Name="PAYEE_TYPE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PAYEE_TYPE_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LAST_UPDT_TS" Type="DateTime" Precision="3" />
+          <Property Name="LAST_UPDT_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_TS" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PAYEEs" Relationship="Self.FK_PAYEE_PAYEE_TYPE" FromRole="PAYEE_TYPE" ToRole="PAYEE" />
+        </EntityType>
+        <EntityType Name="PAYMENT_ARRANGEMENT">
+          <Key>
+            <PropertyRef Name="PAYMENT_ARRANGEMENT_ID" />
+          </Key>
+          <Property Name="PAYMENT_ARRANGEMENT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PAYMENT_ARRANGEMENT_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LAST_UPDT_TS" Type="DateTime" Precision="3" />
+          <Property Name="LAST_UPDT_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_TS" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="People" Relationship="Self.FK_PERSON_PAYMENT_ARRANGEMENT" FromRole="PAYMENT_ARRANGEMENT" ToRole="PERSON" />
+        </EntityType>
+        <EntityType Name="PAYMENT_INFO">
+          <Key>
+            <PropertyRef Name="PAYMENT_INFO_ID" />
+          </Key>
+          <Property Name="PAYMENT_INFO_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PAYEE_ID" Type="Int32" Nullable="false" />
+          <Property Name="PAYMENT_METHOD_ID" Type="Int32" Nullable="false" />
+          <Property Name="SPECIAL_CHEQUE_HANDLING_IND" Type="Boolean" />
+          <Property Name="UBC_VENDOR_NUMB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UVIC_VENDOR_NUMB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UNBC_VENDOR_NUMB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LAST_UPDT_TS" Type="DateTime" Precision="3" />
+          <Property Name="LAST_UPDT_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_TS" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PAYEE" Relationship="Self.FK_PAYMENT_INFO_PAYEE" FromRole="PAYMENT_INFO" ToRole="PAYEE" />
+        </EntityType>
+        <EntityType Name="PERSON">
+          <Key>
+            <PropertyRef Name="PERSON_ID" />
+          </Key>
+          <Property Name="PERSON_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UBC_ID" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FIRST_NAME" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MIDDLE_NAME" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LAST_NAME" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SALUTATION_PREFIX" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ALTERNATE_FIRST_NAME" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="ALTERNATE_MIDDLE_NAME" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ALTERNATE_LAST_NAME" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DATE_OF_BIRTH" Type="DateTime" Precision="3" />
+          <Property Name="GENDER_ID" Type="Int32" Nullable="false" />
+          <Property Name="OCCUPATION_ID" Type="Int32" />
+          <Property Name="PAYMENT_ARRANGMENT_ID" Type="Int32" Nullable="false" />
+          <Property Name="LAST_UPDT_TS" Type="DateTime" Precision="3" />
+          <Property Name="LAST_UPDT_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_TS" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="APPOINTMENTs" Relationship="Self.FK_APPOINTMENT_PERSON1" FromRole="PERSON" ToRole="APPOINTMENT" />
+          <NavigationProperty Name="GENDER" Relationship="Self.FK_PERSON_GENDER" FromRole="PERSON" ToRole="GENDER" />
+          <NavigationProperty Name="OCCUPATION" Relationship="Self.FK_PERSON_OCCUPATION" FromRole="PERSON" ToRole="OCCUPATION" />
+          <NavigationProperty Name="PAYMENT_ARRANGEMENT" Relationship="Self.FK_PERSON_PAYMENT_ARRANGEMENT" FromRole="PERSON" ToRole="PAYMENT_ARRANGEMENT" />
+          <NavigationProperty Name="TTPS_CONTACT_INFO" Relationship="Self.FK_TTPS_CONTACT_INFO_PERSON" FromRole="PERSON" ToRole="TTPS_CONTACT_INFO" />
+          <Property Name="IS_ACTIVE_PROFILE" Type="Boolean" />
+          <Property Name="IS_RETIRED" Type="Boolean" />
+          <Property Name="HAS_ALTERNATE_NAME" Type="Boolean" />
+          <Property Name="PREFERRED_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PHONE_NUMBER_TYPE">
+          <Key>
+            <PropertyRef Name="PHONE_NUMBER_TYPE_ID" />
+          </Key>
+          <Property Name="PHONE_NUMBER_TYPE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PHONE_NUMBER_TYPE_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LAST_UPDT_TS" Type="DateTime" Precision="3" />
+          <Property Name="LAST_UPDT_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_TS" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TTPS_CONTACT_INFO" Relationship="Self.FK_TTPS_CONTACT_INFO_PHONE_NUMBER_TYPE1" FromRole="PHONE_NUMBER_TYPE" ToRole="TTPS_CONTACT_INFO" />
+        </EntityType>
+        <EntityType Name="PROVINCE_STATE">
+          <Key>
+            <PropertyRef Name="PROVINCE_STATE_ID" />
+          </Key>
+          <Property Name="PROVINCE_STATE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PROVINCE_STATE_DESC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PROVINCE_STATE_ABBREV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="LAST_UPDT_TS" Type="DateTime" Precision="3" />
+          <Property Name="LAST_UPDT_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_TS" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TTPS_CONTACT_INFO" Relationship="Self.FK_TTPS_CONTACT_INFO_PROVINCE_STATE" FromRole="PROVINCE_STATE" ToRole="TTPS_CONTACT_INFO" />
+        </EntityType>
+        <EntityType Name="TTPS_CONTACT_INFO">
+          <Key>
+            <PropertyRef Name="TTPS_CONTACT_ID" />
+          </Key>
+          <Property Name="TTPS_CONTACT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PERSON_ID" Type="Int32" Nullable="false" />
+          <Property Name="CONTACT_TYPE_ID" Type="Int32" Nullable="false" />
+          <Property Name="PRIMARY_EMAIL_ADDRESS" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="PRIMARY_PHONE_NUMB" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="PHONE_NUMBER_EXTENSION" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="PHONE_NUMBER_TYPE_ID" Type="Int32" />
+          <Property Name="ALTERNATE_PHONE_NUMB" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="RECIPIENT_NAME" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="ADDRESS_LINE_1" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="ADDRESS_LINE_2" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="SUBURB_DESC" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="MAILING_CD" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="CITY_NAME" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="PROV_OR_STATE_ID" Type="Int32" />
+          <Property Name="COUNTRY_NAME" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+          <Property Name="LAST_UPDT_TS" Type="DateTime" Precision="3" />
+          <Property Name="LAST_UPDT_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_TS" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CONTACT_TYPE" Relationship="Self.FK_TTPS_CONTACT_INFO_CONTACT_TYPE1" FromRole="TTPS_CONTACT_INFO" ToRole="CONTACT_TYPE" />
+          <NavigationProperty Name="PERSON" Relationship="Self.FK_TTPS_CONTACT_INFO_PERSON" FromRole="TTPS_CONTACT_INFO" ToRole="PERSON" />
+          <NavigationProperty Name="PHONE_NUMBER_TYPE" Relationship="Self.FK_TTPS_CONTACT_INFO_PHONE_NUMBER_TYPE1" FromRole="TTPS_CONTACT_INFO" ToRole="PHONE_NUMBER_TYPE" />
+          <NavigationProperty Name="PROVINCE_STATE" Relationship="Self.FK_TTPS_CONTACT_INFO_PROVINCE_STATE" FromRole="TTPS_CONTACT_INFO" ToRole="PROVINCE_STATE" />
+        </EntityType>
+        <Association Name="FK_APPOINTMENT_APPOINTMENT_RANK">
+          <End Role="APPOINTMENT_RANK" Type="Self.APPOINTMENT_RANK" Multiplicity="1" />
+          <End Role="APPOINTMENT" Type="Self.APPOINTMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="APPOINTMENT_RANK">
+              <PropertyRef Name="APPOINTMENT_RANK_ID" />
+            </Principal>
+            <Dependent Role="APPOINTMENT">
+              <PropertyRef Name="CLINICAL_FACULTY_RANK_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_APPOINTMENT_APPOINTMENT_STATE">
+          <End Role="APPOINTMENT_STATE" Type="Self.APPOINTMENT_STATE" Multiplicity="1" />
+          <End Role="APPOINTMENT" Type="Self.APPOINTMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="APPOINTMENT_STATE">
+              <PropertyRef Name="APPOINTMENT_STATE_ID" />
+            </Principal>
+            <Dependent Role="APPOINTMENT">
+              <PropertyRef Name="STATE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_APPOINTMENT_APPOINTMENT_STATUS">
+          <End Role="APPOINTMENT_STATUS" Type="Self.APPOINTMENT_STATUS" Multiplicity="1" />
+          <End Role="APPOINTMENT" Type="Self.APPOINTMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="APPOINTMENT_STATUS">
+              <PropertyRef Name="APPOINTMENT_STATUS_ID" />
+            </Principal>
+            <Dependent Role="APPOINTMENT">
+              <PropertyRef Name="STATUS_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_APPOINTMENT_APPOINTMENT_TYPE">
+          <End Role="APPOINTMENT_TYPE" Type="Self.APPOINTMENT_TYPE" Multiplicity="1" />
+          <End Role="APPOINTMENT" Type="Self.APPOINTMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="APPOINTMENT_TYPE">
+              <PropertyRef Name="APPOINTMENT_TYPE_ID" />
+            </Principal>
+            <Dependent Role="APPOINTMENT">
+              <PropertyRef Name="TYPE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_APPOINTMENT_DEPARTMENT">
+          <End Role="DEPARTMENT" Type="Self.DEPARTMENT" Multiplicity="1" />
+          <End Role="APPOINTMENT" Type="Self.APPOINTMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DEPARTMENT">
+              <PropertyRef Name="DEPARTMENT_ID" />
+            </Principal>
+            <Dependent Role="APPOINTMENT">
+              <PropertyRef Name="DEPARTMENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_APPOINTMENT_HEALTH_AUTHORITY">
+          <End Role="HEALTH_AUTHORITY" Type="Self.HEALTH_AUTHORITY" Multiplicity="1" />
+          <End Role="APPOINTMENT" Type="Self.APPOINTMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HEALTH_AUTHORITY">
+              <PropertyRef Name="HEALTH_AUTHORITY_ID" />
+            </Principal>
+            <Dependent Role="APPOINTMENT">
+              <PropertyRef Name="HEALTH_AUTHORITY_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_APPOINTMENT_PERSON1">
+          <End Role="PERSON" Type="Self.PERSON" Multiplicity="1" />
+          <End Role="APPOINTMENT" Type="Self.APPOINTMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERSON">
+              <PropertyRef Name="PERSON_ID" />
+            </Principal>
+            <Dependent Role="APPOINTMENT">
+              <PropertyRef Name="PERSON_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_APPOINTMENT_ROLE_APPOINTMENT">
+          <End Role="APPOINTMENT" Type="Self.APPOINTMENT" Multiplicity="1" />
+          <End Role="APPOINTMENT_ROLE" Type="Self.APPOINTMENT_ROLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="APPOINTMENT">
+              <PropertyRef Name="APPOINTMENT_ID" />
+            </Principal>
+            <Dependent Role="APPOINTMENT_ROLE">
+              <PropertyRef Name="APPOINTMENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_APPOINTMENT_ROLE_APPOINTMENT_ROLE_TYPE">
+          <End Role="APPOINTMENT_ROLE_TYPE" Type="Self.APPOINTMENT_ROLE_TYPE" Multiplicity="1" />
+          <End Role="APPOINTMENT_ROLE" Type="Self.APPOINTMENT_ROLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="APPOINTMENT_ROLE_TYPE">
+              <PropertyRef Name="APPOINTMENT_ROLE_TYPE_ID" />
+            </Principal>
+            <Dependent Role="APPOINTMENT_ROLE">
+              <PropertyRef Name="ROLE_TYPE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_APPOINTMENT_ROLE_MD_UNDERGRAD_PROGRAM">
+          <End Role="MD_UNDERGRAD_PROGRAM" Type="Self.MD_UNDERGRAD_PROGRAM" Multiplicity="0..1" />
+          <End Role="APPOINTMENT_ROLE" Type="Self.APPOINTMENT_ROLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MD_UNDERGRAD_PROGRAM">
+              <PropertyRef Name="MD_UNDERGRAD_PROGRAM_ID" />
+            </Principal>
+            <Dependent Role="APPOINTMENT_ROLE">
+              <PropertyRef Name="MD_UNDERGRAD_PRGM_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PAYEE_APPOINTMENT_ROLE">
+          <End Role="APPOINTMENT_ROLE" Type="Self.APPOINTMENT_ROLE" Multiplicity="1" />
+          <End Role="PAYEE" Type="Self.PAYEE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="APPOINTMENT_ROLE">
+              <PropertyRef Name="APPOINTMENT_ROLE_ID" />
+            </Principal>
+            <Dependent Role="PAYEE">
+              <PropertyRef Name="APPOINTMENT_ROLE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TTPS_CONTACT_INFO_CONTACT_TYPE1">
+          <End Role="CONTACT_TYPE" Type="Self.CONTACT_TYPE" Multiplicity="1" />
+          <End Role="TTPS_CONTACT_INFO" Type="Self.TTPS_CONTACT_INFO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CONTACT_TYPE">
+              <PropertyRef Name="CONTACT_TYPE_ID" />
+            </Principal>
+            <Dependent Role="TTPS_CONTACT_INFO">
+              <PropertyRef Name="CONTACT_TYPE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PERSON_GENDER">
+          <End Role="GENDER" Type="Self.GENDER" Multiplicity="1" />
+          <End Role="PERSON" Type="Self.PERSON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GENDER">
+              <PropertyRef Name="GENDER_ID" />
+            </Principal>
+            <Dependent Role="PERSON">
+              <PropertyRef Name="GENDER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PERSON_OCCUPATION">
+          <End Role="OCCUPATION" Type="Self.OCCUPATION" Multiplicity="0..1" />
+          <End Role="PERSON" Type="Self.PERSON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OCCUPATION">
+              <PropertyRef Name="OCCUPATION_ID" />
+            </Principal>
+            <Dependent Role="PERSON">
+              <PropertyRef Name="OCCUPATION_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PAYEE_PAYEE_TYPE">
+          <End Role="PAYEE_TYPE" Type="Self.PAYEE_TYPE" Multiplicity="1" />
+          <End Role="PAYEE" Type="Self.PAYEE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PAYEE_TYPE">
+              <PropertyRef Name="PAYEE_TYPE_ID" />
+            </Principal>
+            <Dependent Role="PAYEE">
+              <PropertyRef Name="PAYEE_TYPE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PAYMENT_INFO_PAYEE">
+          <End Role="PAYEE" Type="Self.PAYEE" Multiplicity="1" />
+          <End Role="PAYMENT_INFO" Type="Self.PAYMENT_INFO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PAYEE">
+              <PropertyRef Name="PAYEE_ID" />
+            </Principal>
+            <Dependent Role="PAYMENT_INFO">
+              <PropertyRef Name="PAYEE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PERSON_PAYMENT_ARRANGEMENT">
+          <End Role="PAYMENT_ARRANGEMENT" Type="Self.PAYMENT_ARRANGEMENT" Multiplicity="1" />
+          <End Role="PERSON" Type="Self.PERSON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PAYMENT_ARRANGEMENT">
+              <PropertyRef Name="PAYMENT_ARRANGEMENT_ID" />
+            </Principal>
+            <Dependent Role="PERSON">
+              <PropertyRef Name="PAYMENT_ARRANGMENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TTPS_CONTACT_INFO_PERSON">
+          <End Role="PERSON" Type="Self.PERSON" Multiplicity="1" />
+          <End Role="TTPS_CONTACT_INFO" Type="Self.TTPS_CONTACT_INFO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERSON">
+              <PropertyRef Name="PERSON_ID" />
+            </Principal>
+            <Dependent Role="TTPS_CONTACT_INFO">
+              <PropertyRef Name="PERSON_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TTPS_CONTACT_INFO_PHONE_NUMBER_TYPE1">
+          <End Role="PHONE_NUMBER_TYPE" Type="Self.PHONE_NUMBER_TYPE" Multiplicity="0..1" />
+          <End Role="TTPS_CONTACT_INFO" Type="Self.TTPS_CONTACT_INFO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PHONE_NUMBER_TYPE">
+              <PropertyRef Name="PHONE_NUMBER_TYPE_ID" />
+            </Principal>
+            <Dependent Role="TTPS_CONTACT_INFO">
+              <PropertyRef Name="PHONE_NUMBER_TYPE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TTPS_CONTACT_INFO_PROVINCE_STATE">
+          <End Role="PROVINCE_STATE" Type="Self.PROVINCE_STATE" Multiplicity="0..1" />
+          <End Role="TTPS_CONTACT_INFO" Type="Self.TTPS_CONTACT_INFO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PROVINCE_STATE">
+              <PropertyRef Name="PROVINCE_STATE_ID" />
+            </Principal>
+            <Dependent Role="TTPS_CONTACT_INFO">
+              <PropertyRef Name="PROV_OR_STATE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ttpIrDataContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="APPOINTMENTs" EntityType="Self.APPOINTMENT" />
+          <EntitySet Name="APPOINTMENT_RANK" EntityType="Self.APPOINTMENT_RANK" />
+          <EntitySet Name="APPOINTMENT_ROLE" EntityType="Self.APPOINTMENT_ROLE" />
+          <EntitySet Name="APPOINTMENT_ROLE_TYPE" EntityType="Self.APPOINTMENT_ROLE_TYPE" />
+          <EntitySet Name="APPOINTMENT_STATE" EntityType="Self.APPOINTMENT_STATE" />
+          <EntitySet Name="APPOINTMENT_STATUS" EntityType="Self.APPOINTMENT_STATUS" />
+          <EntitySet Name="APPOINTMENT_TYPE" EntityType="Self.APPOINTMENT_TYPE" />
+          <EntitySet Name="CONTACT_TYPE" EntityType="Self.CONTACT_TYPE" />
+          <EntitySet Name="DEPARTMENTs" EntityType="Self.DEPARTMENT" />
+          <EntitySet Name="GENDERs" EntityType="Self.GENDER" />
+          <EntitySet Name="HEALTH_AUTHORITY" EntityType="Self.HEALTH_AUTHORITY" />
+          <EntitySet Name="MD_UNDERGRAD_PROGRAM" EntityType="Self.MD_UNDERGRAD_PROGRAM" />
+          <EntitySet Name="OCCUPATIONs" EntityType="Self.OCCUPATION" />
+          <EntitySet Name="PAYEEs" EntityType="Self.PAYEE" />
+          <EntitySet Name="PAYEE_TYPE" EntityType="Self.PAYEE_TYPE" />
+          <EntitySet Name="PAYMENT_ARRANGEMENT" EntityType="Self.PAYMENT_ARRANGEMENT" />
+          <EntitySet Name="PAYMENT_INFO" EntityType="Self.PAYMENT_INFO" />
+          <EntitySet Name="People" EntityType="Self.PERSON" />
+          <EntitySet Name="PHONE_NUMBER_TYPE" EntityType="Self.PHONE_NUMBER_TYPE" />
+          <EntitySet Name="PROVINCE_STATE" EntityType="Self.PROVINCE_STATE" />
+          <EntitySet Name="TTPS_CONTACT_INFO" EntityType="Self.TTPS_CONTACT_INFO" />
+          <AssociationSet Name="FK_APPOINTMENT_APPOINTMENT_RANK" Association="Self.FK_APPOINTMENT_APPOINTMENT_RANK">
+            <End Role="APPOINTMENT_RANK" EntitySet="APPOINTMENT_RANK" />
+            <End Role="APPOINTMENT" EntitySet="APPOINTMENTs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_APPOINTMENT_APPOINTMENT_STATE" Association="Self.FK_APPOINTMENT_APPOINTMENT_STATE">
+            <End Role="APPOINTMENT_STATE" EntitySet="APPOINTMENT_STATE" />
+            <End Role="APPOINTMENT" EntitySet="APPOINTMENTs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_APPOINTMENT_APPOINTMENT_STATUS" Association="Self.FK_APPOINTMENT_APPOINTMENT_STATUS">
+            <End Role="APPOINTMENT_STATUS" EntitySet="APPOINTMENT_STATUS" />
+            <End Role="APPOINTMENT" EntitySet="APPOINTMENTs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_APPOINTMENT_APPOINTMENT_TYPE" Association="Self.FK_APPOINTMENT_APPOINTMENT_TYPE">
+            <End Role="APPOINTMENT_TYPE" EntitySet="APPOINTMENT_TYPE" />
+            <End Role="APPOINTMENT" EntitySet="APPOINTMENTs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_APPOINTMENT_DEPARTMENT" Association="Self.FK_APPOINTMENT_DEPARTMENT">
+            <End Role="DEPARTMENT" EntitySet="DEPARTMENTs" />
+            <End Role="APPOINTMENT" EntitySet="APPOINTMENTs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_APPOINTMENT_HEALTH_AUTHORITY" Association="Self.FK_APPOINTMENT_HEALTH_AUTHORITY">
+            <End Role="HEALTH_AUTHORITY" EntitySet="HEALTH_AUTHORITY" />
+            <End Role="APPOINTMENT" EntitySet="APPOINTMENTs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_APPOINTMENT_PERSON1" Association="Self.FK_APPOINTMENT_PERSON1">
+            <End Role="PERSON" EntitySet="People" />
+            <End Role="APPOINTMENT" EntitySet="APPOINTMENTs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_APPOINTMENT_ROLE_APPOINTMENT" Association="Self.FK_APPOINTMENT_ROLE_APPOINTMENT">
+            <End Role="APPOINTMENT" EntitySet="APPOINTMENTs" />
+            <End Role="APPOINTMENT_ROLE" EntitySet="APPOINTMENT_ROLE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_APPOINTMENT_ROLE_APPOINTMENT_ROLE_TYPE" Association="Self.FK_APPOINTMENT_ROLE_APPOINTMENT_ROLE_TYPE">
+            <End Role="APPOINTMENT_ROLE_TYPE" EntitySet="APPOINTMENT_ROLE_TYPE" />
+            <End Role="APPOINTMENT_ROLE" EntitySet="APPOINTMENT_ROLE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_APPOINTMENT_ROLE_MD_UNDERGRAD_PROGRAM" Association="Self.FK_APPOINTMENT_ROLE_MD_UNDERGRAD_PROGRAM">
+            <End Role="MD_UNDERGRAD_PROGRAM" EntitySet="MD_UNDERGRAD_PROGRAM" />
+            <End Role="APPOINTMENT_ROLE" EntitySet="APPOINTMENT_ROLE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PAYEE_APPOINTMENT_ROLE" Association="Self.FK_PAYEE_APPOINTMENT_ROLE">
+            <End Role="APPOINTMENT_ROLE" EntitySet="APPOINTMENT_ROLE" />
+            <End Role="PAYEE" EntitySet="PAYEEs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TTPS_CONTACT_INFO_CONTACT_TYPE1" Association="Self.FK_TTPS_CONTACT_INFO_CONTACT_TYPE1">
+            <End Role="CONTACT_TYPE" EntitySet="CONTACT_TYPE" />
+            <End Role="TTPS_CONTACT_INFO" EntitySet="TTPS_CONTACT_INFO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PERSON_GENDER" Association="Self.FK_PERSON_GENDER">
+            <End Role="GENDER" EntitySet="GENDERs" />
+            <End Role="PERSON" EntitySet="People" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PERSON_OCCUPATION" Association="Self.FK_PERSON_OCCUPATION">
+            <End Role="OCCUPATION" EntitySet="OCCUPATIONs" />
+            <End Role="PERSON" EntitySet="People" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PAYEE_PAYEE_TYPE" Association="Self.FK_PAYEE_PAYEE_TYPE">
+            <End Role="PAYEE_TYPE" EntitySet="PAYEE_TYPE" />
+            <End Role="PAYEE" EntitySet="PAYEEs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PAYMENT_INFO_PAYEE" Association="Self.FK_PAYMENT_INFO_PAYEE">
+            <End Role="PAYEE" EntitySet="PAYEEs" />
+            <End Role="PAYMENT_INFO" EntitySet="PAYMENT_INFO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PERSON_PAYMENT_ARRANGEMENT" Association="Self.FK_PERSON_PAYMENT_ARRANGEMENT">
+            <End Role="PAYMENT_ARRANGEMENT" EntitySet="PAYMENT_ARRANGEMENT" />
+            <End Role="PERSON" EntitySet="People" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TTPS_CONTACT_INFO_PERSON" Association="Self.FK_TTPS_CONTACT_INFO_PERSON">
+            <End Role="PERSON" EntitySet="People" />
+            <End Role="TTPS_CONTACT_INFO" EntitySet="TTPS_CONTACT_INFO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TTPS_CONTACT_INFO_PHONE_NUMBER_TYPE1" Association="Self.FK_TTPS_CONTACT_INFO_PHONE_NUMBER_TYPE1">
+            <End Role="PHONE_NUMBER_TYPE" EntitySet="PHONE_NUMBER_TYPE" />
+            <End Role="TTPS_CONTACT_INFO" EntitySet="TTPS_CONTACT_INFO" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TTPS_CONTACT_INFO_PROVINCE_STATE" Association="Self.FK_TTPS_CONTACT_INFO_PROVINCE_STATE">
+            <End Role="PROVINCE_STATE" EntitySet="PROVINCE_STATE" />
+            <End Role="TTPS_CONTACT_INFO" EntitySet="TTPS_CONTACT_INFO" />
+          </AssociationSet>
+          <EntitySet Name="IS_PROFILE_ACTIVE" EntityType="ttpirDataModel.IS_PROFILE_ACTIVE" />
+          <EntitySet Name="IS_RETIRED" EntityType="ttpirDataModel.IS_RETIRED" />
+          <EntitySet Name="SALUTATIONS" EntityType="ttpirDataModel.SALUTATION" />
+        </EntityContainer>
+        <EntityType Name="IS_PROFILE_ACTIVE">
+          <Key>
+            <PropertyRef Name="PROFILE_ACTIVE_ID" />
+          </Key>
+          <Property Name="PROFILE_ACTIVE_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ACTIVE_IND" Type="Boolean" />
+          <Property Name="IND_DESCRIPTION" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="LAST_UPDT_TS" Type="DateTime" Precision="3" />
+          <Property Name="LAST_UPDT_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_TS" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="IS_RETIRED">
+          <Key>
+            <PropertyRef Name="RETIRED_ID" />
+          </Key>
+          <Property Name="RETIRED_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RETIRED_IND" Type="Boolean" />
+          <Property Name="IND_DESCRIPTION" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="LAST_UPDT_TS" Type="DateTime" Precision="3" />
+          <Property Name="LAST_UPDT_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_TS" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="SALUTATION">
+          <Key>
+            <PropertyRef Name="SALUTATION_ID" />
+          </Key>
+          <Property Name="SALUTATION_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SALUTATION_PREFIX" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="LAST_UPDT_TS" Type="DateTime" Precision="3" />
+          <Property Name="LAST_UPDT_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATED_TS" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ttpirDataModelStoreContainer" CdmEntityContainer="ttpIrDataContext">
+          <EntitySetMapping Name="APPOINTMENTs">
+            <EntityTypeMapping TypeName="ttpirDataModel.APPOINTMENT">
+              <MappingFragment StoreEntitySet="APPOINTMENT">
+                <ScalarProperty Name="APPOINTMENT_ID" ColumnName="APPOINTMENT_ID" />
+                <ScalarProperty Name="PERSON_ID" ColumnName="PERSON_ID" />
+                <ScalarProperty Name="TYPE_ID" ColumnName="TYPE_ID" />
+                <ScalarProperty Name="STATE_ID" ColumnName="STATE_ID" />
+                <ScalarProperty Name="STATUS_ID" ColumnName="STATUS_ID" />
+                <ScalarProperty Name="CLINICAL_FACULTY_RANK_ID" ColumnName="CLINICAL_FACULTY_RANK_ID" />
+                <ScalarProperty Name="DEPARTMENT_ID" ColumnName="DEPARTMENT_ID" />
+                <ScalarProperty Name="DIVISION_DESC" ColumnName="DIVISION_DESC" />
+                <ScalarProperty Name="HEALTH_AUTHORITY_ID" ColumnName="HEALTH_AUTHORITY_ID" />
+                <ScalarProperty Name="APPOINTMENT_START_DT" ColumnName="APPOINTMENT_START_DT" />
+                <ScalarProperty Name="APPOINTMENT_END_DT" ColumnName="APPOINTMENT_END_DT" />
+                <ScalarProperty Name="LAST_UPDT_TS" ColumnName="LAST_UPDT_TS" />
+                <ScalarProperty Name="LAST_UPDT_USER" ColumnName="LAST_UPDT_USER" />
+                <ScalarProperty Name="CREATED_TS" ColumnName="CREATED_TS" />
+                <ScalarProperty Name="CREATED_USER" ColumnName="CREATED_USER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="APPOINTMENT_RANK">
+            <EntityTypeMapping TypeName="ttpirDataModel.APPOINTMENT_RANK">
+              <MappingFragment StoreEntitySet="APPOINTMENT_RANK">
+                <ScalarProperty Name="APPOINTMENT_RANK_ID" ColumnName="APPOINTMENT_RANK_ID" />
+                <ScalarProperty Name="APPOINTMENT_RANK_DESC" ColumnName="APPOINTMENT_RANK_DESC" />
+                <ScalarProperty Name="LAST_UPDT_TS" ColumnName="LAST_UPDT_TS" />
+                <ScalarProperty Name="LAST_UPDT_USER" ColumnName="LAST_UPDT_USER" />
+                <ScalarProperty Name="CREATED_TS" ColumnName="CREATED_TS" />
+                <ScalarProperty Name="CREATED_USER" ColumnName="CREATED_USER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="APPOINTMENT_ROLE">
+            <EntityTypeMapping TypeName="ttpirDataModel.APPOINTMENT_ROLE">
+              <MappingFragment StoreEntitySet="APPOINTMENT_ROLE">
+                <ScalarProperty Name="APPOINTMENT_ROLE_ID" ColumnName="APPOINTMENT_ROLE_ID" />
+                <ScalarProperty Name="APPOINTMENT_ID" ColumnName="APPOINTMENT_ID" />
+                <ScalarProperty Name="ROLE_TYPE_ID" ColumnName="ROLE_TYPE_ID" />
+                <ScalarProperty Name="TEACHES_MD_PRMG_IND" ColumnName="TEACHES_MD_PRMG_IND" />
+                <ScalarProperty Name="MD_UNDERGRAD_PRGM_ID" ColumnName="MD_UNDERGRAD_PRGM_ID" />
+                <ScalarProperty Name="MD_POSTGRAD_PRGM_IND" ColumnName="MD_POSTGRAD_PRGM_IND" />
+                <ScalarProperty Name="PAYMENT_IND" ColumnName="PAYMENT_IND" />
+                <ScalarProperty Name="LAST_UPDT_TS" ColumnName="LAST_UPDT_TS" />
+                <ScalarProperty Name="LAST_UPDT_USER" ColumnName="LAST_UPDT_USER" />
+                <ScalarProperty Name="CREATED_TS" ColumnName="CREATED_TS" />
+                <ScalarProperty Name="CREATED_USER" ColumnName="CREATED_USER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="APPOINTMENT_ROLE_TYPE">
+            <EntityTypeMapping TypeName="ttpirDataModel.APPOINTMENT_ROLE_TYPE">
+              <MappingFragment StoreEntitySet="APPOINTMENT_ROLE_TYPE">
+                <ScalarProperty Name="APPOINTMENT_ROLE_TYPE_ID" ColumnName="APPOINTMENT_ROLE_TYPE_ID" />
+                <ScalarProperty Name="APPOINTMENT_ROLE_TYPE_DESC" ColumnName="APPOINTMENT_ROLE_TYPE_DESC" />
+                <ScalarProperty Name="LAST_UPDT_TS" ColumnName="LAST_UPDT_TS" />
+                <ScalarProperty Name="LAST_UPDT_USER" ColumnName="LAST_UPDT_USER" />
+                <ScalarProperty Name="CREATED_TS" ColumnName="CREATED_TS" />
+                <ScalarProperty Name="CREATED_USER" ColumnName="CREATED_USER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="APPOINTMENT_STATE">
+            <EntityTypeMapping TypeName="ttpirDataModel.APPOINTMENT_STATE">
+              <MappingFragment StoreEntitySet="APPOINTMENT_STATE">
+                <ScalarProperty Name="APPOINTMENT_STATE_ID" ColumnName="APPOINTMENT_STATE_ID" />
+                <ScalarProperty Name="APPOINTMENT_STATE_DESC" ColumnName="APPOINTMENT_STATE_DESC" />
+                <ScalarProperty Name="LAST_UPDT_TS" ColumnName="LAST_UPDT_TS" />
+                <ScalarProperty Name="LAST_UPDT_USER" ColumnName="LAST_UPDT_USER" />
+                <ScalarProperty Name="CREATED_TS" ColumnName="CREATED_TS" />
+                <ScalarProperty Name="CREATED_USER" ColumnName="CREATED_USER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="APPOINTMENT_STATUS">
+            <EntityTypeMapping TypeName="ttpirDataModel.APPOINTMENT_STATUS">
+              <MappingFragment StoreEntitySet="APPOINTMENT_STATUS">
+                <ScalarProperty Name="APPOINTMENT_STATUS_ID" ColumnName="APPOINTMENT_STATUS_ID" />
+                <ScalarProperty Name="APPOINTMENT_STATUS_DESC" ColumnName="APPOINTMENT_STATUS_DESC" />
+                <ScalarProperty Name="LAST_UPDT_TS" ColumnName="LAST_UPDT_TS" />
+                <ScalarProperty Name="LAST_UPDT_USER" ColumnName="LAST_UPDT_USER" />
+                <ScalarProperty Name="CREATED_TS" ColumnName="CREATED_TS" />
+                <ScalarProperty Name="CREATED_USER" ColumnName="CREATED_USER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="APPOINTMENT_TYPE">
+            <EntityTypeMapping TypeName="ttpirDataModel.APPOINTMENT_TYPE">
+              <MappingFragment StoreEntitySet="APPOINTMENT_TYPE">
+                <ScalarProperty Name="APPOINTMENT_TYPE_ID" ColumnName="APPOINTMENT_TYPE_ID" />
+                <ScalarProperty Name="APPOINTMENT_TYPE_DESC" ColumnName="APPOINTMENT_TYPE_DESC" />
+                <ScalarProperty Name="LAST_UPDT_TS" ColumnName="LAST_UPDT_TS" />
+                <ScalarProperty Name="LAST_UPDT_USER" ColumnName="LAST_UPDT_USER" />
+                <ScalarProperty Name="CREATED_TS" ColumnName="CREATED_TS" />
+                <ScalarProperty Name="CREATED_USER" ColumnName="CREATED_USER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CONTACT_TYPE">
+            <EntityTypeMapping TypeName="ttpirDataModel.CONTACT_TYPE">
+              <MappingFragment StoreEntitySet="CONTACT_TYPE">
+                <ScalarProperty Name="CONTACT_TYPE_ID" ColumnName="CONTACT_TYPE_ID" />
+                <ScalarProperty Name="CONTACT_TYPE_DESC" ColumnName="CONTACT_TYPE_DESC" />
+                <ScalarProperty Name="LAST_UPDT_TS" ColumnName="LAST_UPDT_TS" />
+                <ScalarProperty Name="LAST_UPDT_USER" ColumnName="LAST_UPDT_USER" />
+                <ScalarProperty Name="CREATED_TS" ColumnName="CREATED_TS" />
+                <ScalarProperty Name="CREATED_USER" ColumnName="CREATED_USER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DEPARTMENTs">
+            <EntityTypeMapping TypeName="ttpirDataModel.DEPARTMENT">
+              <MappingFragment StoreEntitySet="DEPARTMENT">
+                <ScalarProperty Name="DEPARTMENT_ID" ColumnName="DEPARTMENT_ID" />
+                <ScalarProperty Name="DEPARTMENT_DESC" ColumnName="DEPARTMENT_DESC" />
+                <ScalarProperty Name="LAST_UPDT_TS" ColumnName="LAST_UPDT_TS" />
+                <ScalarProperty Name="LAST_UPDT_USER" ColumnName="LAST_UPDT_USER" />
+                <ScalarProperty Name="CREATED_TS" ColumnName="CREATED_TS" />
+                <ScalarProperty Name="CREATED_USER" ColumnName="CREATED_USER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GENDERs">
+            <EntityTypeMapping TypeName="ttpirDataModel.GENDER">
+              <MappingFragment StoreEntitySet="GENDER">
+                <ScalarProperty Name="GENDER_ID" ColumnName="GENDER_ID" />
+                <ScalarProperty Name="GENDER_DESC" ColumnName="GENDER_DESC" />
+                <ScalarProperty Name="LAST_UPDT_TS" ColumnName="LAST_UPDT_TS" />
+                <ScalarProperty Name="LAST_UPDT_USER" ColumnName="LAST_UPDT_USER" />
+                <ScalarProperty Name="CREATED_TS" ColumnName="CREATED_TS" />
+                <ScalarProperty Name="CREATED_USER" ColumnName="CREATED_USER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HEALTH_AUTHORITY">
+            <EntityTypeMapping TypeName="ttpirDataModel.HEALTH_AUTHORITY">
+              <MappingFragment StoreEntitySet="HEALTH_AUTHORITY">
+                <ScalarProperty Name="HEALTH_AUTHORITY_ID" ColumnName="HEALTH_AUTHORITY_ID" />
+                <ScalarProperty Name="HEALTH_AUTHORITY_DESC" ColumnName="HEALTH_AUTHORITY_DESC" />
+                <ScalarProperty Name="LAST_UPDT_TS" ColumnName="LAST_UPDT_TS" />
+                <ScalarProperty Name="LAST_UPDT_USER" ColumnName="LAST_UPDT_USER" />
+                <ScalarProperty Name="CREATED_TS" ColumnName="CREATED_TS" />
+                <ScalarProperty Name="CREATED_USER" ColumnName="CREATED_USER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MD_UNDERGRAD_PROGRAM">
+            <EntityTypeMapping TypeName="ttpirDataModel.MD_UNDERGRAD_PROGRAM">
+              <MappingFragment StoreEntitySet="MD_UNDERGRAD_PROGRAM">
+                <ScalarProperty Name="MD_UNDERGRAD_PROGRAM_ID" ColumnName="MD_UNDERGRAD_PROGRAM_ID" />
+                <ScalarProperty Name="MD_UNDERGRAD_PROGRAM_DESC" ColumnName="MD_UNDERGRAD_PROGRAM_DESC" />
+                <ScalarProperty Name="LAST_UPDT_TS" ColumnName="LAST_UPDT_TS" />
+                <ScalarProperty Name="LAST_UPDT_USER" ColumnName="LAST_UPDT_USER" />
+                <ScalarProperty Name="CREATED_TS" ColumnName="CREATED_TS" />
+                <ScalarProperty Name="CREATED_USER" ColumnName="CREATED_USER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OCCUPATIONs">
+            <EntityTypeMapping TypeName="ttpirDataModel.OCCUPATION">
+              <MappingFragment StoreEntitySet="OCCUPATION">
+                <ScalarProperty Name="OCCUPATION_ID" ColumnName="OCCUPATION_ID" />
+                <ScalarProperty Name="OCCUPATION_DESC" ColumnName="OCCUPATION_DESC" />
+                <ScalarProperty Name="LAST_UPDT_TS" ColumnName="LAST_UPDT_TS" />
+                <ScalarProperty Name="LAST_UPDT_USER" ColumnName="LAST_UPDT_USER" />
+                <ScalarProperty Name="CREATED_TS" ColumnName="CREATED_TS" />
+                <ScalarProperty Name="CREATED_USER" ColumnName="CREATED_USER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PAYEEs">
+            <EntityTypeMapping TypeName="ttpirDataModel.PAYEE">
+              <MappingFragment StoreEntitySet="PAYEE">
+                <ScalarProperty Name="PAYEE_ID" ColumnName="PAYEE_ID" />
+                <ScalarProperty Name="APPOINTMENT_ROLE_ID" ColumnName="APPOINTMENT_ROLE_ID" />
+                <ScalarProperty Name="PAYEE_TYPE_ID" ColumnName="PAYEE_TYPE_ID" />
+                <ScalarProperty Name="ADDRESS_IS_MAILING_IND" ColumnName="ADDRESS_IS_MAILING_IND" />
+                <ScalarProperty Name="PAYEE_ORGANIZATION_ID" ColumnName="PAYEE_ORGANIZATION_ID" />
+                <ScalarProperty Name="DELIMITER_CHARACTER" ColumnName="DELIMITER_CHARACTER" />
+                <ScalarProperty Name="GST_STATUS_ID" ColumnName="GST_STATUS_ID" />
+                <ScalarProperty Name="BUSINESS_NUMB" ColumnName="BUSINESS_NUMB" />
+                <ScalarProperty Name="SMALL_SUPPLIER_STATUS" ColumnName="SMALL_SUPPLIER_STATUS" />
+                <ScalarProperty Name="GST_NUMB" ColumnName="GST_NUMB" />
+                <ScalarProperty Name="LAST_UPDT_TS" ColumnName="LAST_UPDT_TS" />
+                <ScalarProperty Name="LAST_UPDT_USER" ColumnName="LAST_UPDT_USER" />
+                <ScalarProperty Name="CREATED_TS" ColumnName="CREATED_TS" />
+                <ScalarProperty Name="CREATED_USER" ColumnName="CREATED_USER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PAYEE_TYPE">
+            <EntityTypeMapping TypeName="ttpirDataModel.PAYEE_TYPE">
+              <MappingFragment StoreEntitySet="PAYEE_TYPE">
+                <ScalarProperty Name="PAYEE_TYPE_ID" ColumnName="PAYEE_TYPE_ID" />
+                <ScalarProperty Name="PAYEE_TYPE_DESC" ColumnName="PAYEE_TYPE_DESC" />
+                <ScalarProperty Name="LAST_UPDT_TS" ColumnName="LAST_UPDT_TS" />
+                <ScalarProperty Name="LAST_UPDT_USER" ColumnName="LAST_UPDT_USER" />
+                <ScalarProperty Name="CREATED_TS" ColumnName="CREATED_TS" />
+                <ScalarProperty Name="CREATED_USER" ColumnName="CREATED_USER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PAYMENT_ARRANGEMENT">
+            <EntityTypeMapping TypeName="ttpirDataModel.PAYMENT_ARRANGEMENT">
+              <MappingFragment StoreEntitySet="PAYMENT_ARRANGEMENT">
+                <ScalarProperty Name="PAYMENT_ARRANGEMENT_ID" ColumnName="PAYMENT_ARRANGEMENT_ID" />
+                <ScalarProperty Name="PAYMENT_ARRANGEMENT_DESC" ColumnName="PAYMENT_ARRANGEMENT_DESC" />
+                <ScalarProperty Name="LAST_UPDT_TS" ColumnName="LAST_UPDT_TS" />
+                <ScalarProperty Name="LAST_UPDT_USER" ColumnName="LAST_UPDT_USER" />
+                <ScalarProperty Name="CREATED_TS" ColumnName="CREATED_TS" />
+                <ScalarProperty Name="CREATED_USER" ColumnName="CREATED_USER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PAYMENT_INFO">
+            <EntityTypeMapping TypeName="ttpirDataModel.PAYMENT_INFO">
+              <MappingFragment StoreEntitySet="PAYMENT_INFO">
+                <ScalarProperty Name="PAYMENT_INFO_ID" ColumnName="PAYMENT_INFO_ID" />
+                <ScalarProperty Name="PAYEE_ID" ColumnName="PAYEE_ID" />
+                <ScalarProperty Name="PAYMENT_METHOD_ID" ColumnName="PAYMENT_METHOD_ID" />
+                <ScalarProperty Name="SPECIAL_CHEQUE_HANDLING_IND" ColumnName="SPECIAL_CHEQUE_HANDLING_IND" />
+                <ScalarProperty Name="UBC_VENDOR_NUMB" ColumnName="UBC_VENDOR_NUMB" />
+                <ScalarProperty Name="UVIC_VENDOR_NUMB" ColumnName="UVIC_VENDOR_NUMB" />
+                <ScalarProperty Name="UNBC_VENDOR_NUMB" ColumnName="UNBC_VENDOR_NUMB" />
+                <ScalarProperty Name="LAST_UPDT_TS" ColumnName="LAST_UPDT_TS" />
+                <ScalarProperty Name="LAST_UPDT_USER" ColumnName="LAST_UPDT_USER" />
+                <ScalarProperty Name="CREATED_TS" ColumnName="CREATED_TS" />
+                <ScalarProperty Name="CREATED_USER" ColumnName="CREATED_USER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="People">
+            <EntityTypeMapping TypeName="ttpirDataModel.PERSON">
+              <MappingFragment StoreEntitySet="PERSON">
+                <ScalarProperty Name="PREFERRED_NAME" ColumnName="PREFERRED_NAME" />
+                <ScalarProperty Name="HAS_ALTERNATE_NAME" ColumnName="HAS_ALTERNATE_NAME" />
+                <ScalarProperty Name="IS_RETIRED" ColumnName="IS_RETIRED" />
+                <ScalarProperty Name="IS_ACTIVE_PROFILE" ColumnName="IS_ACTIVE_PROFILE" />
+                <ScalarProperty Name="PERSON_ID" ColumnName="PERSON_ID" />
+                <ScalarProperty Name="UBC_ID" ColumnName="UBC_ID" />
+                <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+                <ScalarProperty Name="MIDDLE_NAME" ColumnName="MIDDLE_NAME" />
+                <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+                <ScalarProperty Name="SALUTATION_PREFIX" ColumnName="SALUTATION_PREFIX" />
+                <ScalarProperty Name="ALTERNATE_FIRST_NAME" ColumnName="ALTERNATE_FIRST_NAME" />
+                <ScalarProperty Name="ALTERNATE_MIDDLE_NAME" ColumnName="ALTERNATE_MIDDLE_NAME" />
+                <ScalarProperty Name="ALTERNATE_LAST_NAME" ColumnName="ALTERNATE_LAST_NAME" />
+                <ScalarProperty Name="DATE_OF_BIRTH" ColumnName="DATE_OF_BIRTH" />
+                <ScalarProperty Name="GENDER_ID" ColumnName="GENDER_ID" />
+                <ScalarProperty Name="OCCUPATION_ID" ColumnName="OCCUPATION_ID" />
+                <ScalarProperty Name="PAYMENT_ARRANGMENT_ID" ColumnName="PAYMENT_ARRANGMENT_ID" />
+                <ScalarProperty Name="LAST_UPDT_TS" ColumnName="LAST_UPDT_TS" />
+                <ScalarProperty Name="LAST_UPDT_USER" ColumnName="LAST_UPDT_USER" />
+                <ScalarProperty Name="CREATED_TS" ColumnName="CREATED_TS" />
+                <ScalarProperty Name="CREATED_USER" ColumnName="CREATED_USER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PHONE_NUMBER_TYPE">
+            <EntityTypeMapping TypeName="ttpirDataModel.PHONE_NUMBER_TYPE">
+              <MappingFragment StoreEntitySet="PHONE_NUMBER_TYPE">
+                <ScalarProperty Name="PHONE_NUMBER_TYPE_ID" ColumnName="PHONE_NUMBER_TYPE_ID" />
+                <ScalarProperty Name="PHONE_NUMBER_TYPE_DESC" ColumnName="PHONE_NUMBER_TYPE_DESC" />
+                <ScalarProperty Name="LAST_UPDT_TS" ColumnName="LAST_UPDT_TS" />
+                <ScalarProperty Name="LAST_UPDT_USER" ColumnName="LAST_UPDT_USER" />
+                <ScalarProperty Name="CREATED_TS" ColumnName="CREATED_TS" />
+                <ScalarProperty Name="CREATED_USER" ColumnName="CREATED_USER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PROVINCE_STATE">
+            <EntityTypeMapping TypeName="ttpirDataModel.PROVINCE_STATE">
+              <MappingFragment StoreEntitySet="PROVINCE_STATE">
+                <ScalarProperty Name="PROVINCE_STATE_ID" ColumnName="PROVINCE_STATE_ID" />
+                <ScalarProperty Name="PROVINCE_STATE_DESC" ColumnName="PROVINCE_STATE_DESC" />
+                <ScalarProperty Name="PROVINCE_STATE_ABBREV" ColumnName="PROVINCE_STATE_ABBREV" />
+                <ScalarProperty Name="LAST_UPDT_TS" ColumnName="LAST_UPDT_TS" />
+                <ScalarProperty Name="LAST_UPDT_USER" ColumnName="LAST_UPDT_USER" />
+                <ScalarProperty Name="CREATED_TS" ColumnName="CREATED_TS" />
+                <ScalarProperty Name="CREATED_USER" ColumnName="CREATED_USER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TTPS_CONTACT_INFO">
+            <EntityTypeMapping TypeName="ttpirDataModel.TTPS_CONTACT_INFO">
+              <MappingFragment StoreEntitySet="TTPS_CONTACT_INFO">
+                <ScalarProperty Name="TTPS_CONTACT_ID" ColumnName="TTPS_CONTACT_ID" />
+                <ScalarProperty Name="PERSON_ID" ColumnName="PERSON_ID" />
+                <ScalarProperty Name="CONTACT_TYPE_ID" ColumnName="CONTACT_TYPE_ID" />
+                <ScalarProperty Name="PRIMARY_EMAIL_ADDRESS" ColumnName="PRIMARY_EMAIL_ADDRESS" />
+                <ScalarProperty Name="PRIMARY_PHONE_NUMB" ColumnName="PRIMARY_PHONE_NUMB" />
+                <ScalarProperty Name="PHONE_NUMBER_EXTENSION" ColumnName="PHONE_NUMBER_EXTENSION" />
+                <ScalarProperty Name="PHONE_NUMBER_TYPE_ID" ColumnName="PHONE_NUMBER_TYPE_ID" />
+                <ScalarProperty Name="ALTERNATE_PHONE_NUMB" ColumnName="ALTERNATE_PHONE_NUMB" />
+                <ScalarProperty Name="RECIPIENT_NAME" ColumnName="RECIPIENT_NAME" />
+                <ScalarProperty Name="ADDRESS_LINE_1" ColumnName="ADDRESS_LINE_1" />
+                <ScalarProperty Name="ADDRESS_LINE_2" ColumnName="ADDRESS_LINE_2" />
+                <ScalarProperty Name="SUBURB_DESC" ColumnName="SUBURB_DESC" />
+                <ScalarProperty Name="MAILING_CD" ColumnName="MAILING_CD" />
+                <ScalarProperty Name="CITY_NAME" ColumnName="CITY_NAME" />
+                <ScalarProperty Name="PROV_OR_STATE_ID" ColumnName="PROV_OR_STATE_ID" />
+                <ScalarProperty Name="COUNTRY_NAME" ColumnName="COUNTRY_NAME" />
+                <ScalarProperty Name="LAST_UPDT_TS" ColumnName="LAST_UPDT_TS" />
+                <ScalarProperty Name="LAST_UPDT_USER" ColumnName="LAST_UPDT_USER" />
+                <ScalarProperty Name="CREATED_TS" ColumnName="CREATED_TS" />
+                <ScalarProperty Name="CREATED_USER" ColumnName="CREATED_USER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IS_PROFILE_ACTIVE">
+            <EntityTypeMapping TypeName="ttpirDataModel.IS_PROFILE_ACTIVE">
+              <MappingFragment StoreEntitySet="IS_PROFILE_ACTIVE">
+                <ScalarProperty Name="CREATED_USER" ColumnName="CREATED_USER" />
+                <ScalarProperty Name="CREATED_TS" ColumnName="CREATED_TS" />
+                <ScalarProperty Name="LAST_UPDT_USER" ColumnName="LAST_UPDT_USER" />
+                <ScalarProperty Name="LAST_UPDT_TS" ColumnName="LAST_UPDT_TS" />
+                <ScalarProperty Name="IND_DESCRIPTION" ColumnName="IND_DESCRIPTION" />
+                <ScalarProperty Name="ACTIVE_IND" ColumnName="ACTIVE_IND" />
+                <ScalarProperty Name="PROFILE_ACTIVE_ID" ColumnName="PROFILE_ACTIVE_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IS_RETIRED">
+            <EntityTypeMapping TypeName="ttpirDataModel.IS_RETIRED">
+              <MappingFragment StoreEntitySet="IS_RETIRED">
+                <ScalarProperty Name="CREATED_USER" ColumnName="CREATED_USER" />
+                <ScalarProperty Name="CREATED_TS" ColumnName="CREATED_TS" />
+                <ScalarProperty Name="LAST_UPDT_USER" ColumnName="LAST_UPDT_USER" />
+                <ScalarProperty Name="LAST_UPDT_TS" ColumnName="LAST_UPDT_TS" />
+                <ScalarProperty Name="IND_DESCRIPTION" ColumnName="IND_DESCRIPTION" />
+                <ScalarProperty Name="RETIRED_IND" ColumnName="RETIRED_IND" />
+                <ScalarProperty Name="RETIRED_ID" ColumnName="RETIRED_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SALUTATIONS">
+            <EntityTypeMapping TypeName="ttpirDataModel.SALUTATION">
+              <MappingFragment StoreEntitySet="SALUTATIONS">
+                <ScalarProperty Name="CREATED_USER" ColumnName="CREATED_USER" />
+                <ScalarProperty Name="CREATED_TS" ColumnName="CREATED_TS" />
+                <ScalarProperty Name="LAST_UPDT_USER" ColumnName="LAST_UPDT_USER" />
+                <ScalarProperty Name="LAST_UPDT_TS" ColumnName="LAST_UPDT_TS" />
+                <ScalarProperty Name="SALUTATION_PREFIX" ColumnName="SALUTATION_PREFIX" />
+                <ScalarProperty Name="SALUTATION_ID" ColumnName="SALUTATION_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

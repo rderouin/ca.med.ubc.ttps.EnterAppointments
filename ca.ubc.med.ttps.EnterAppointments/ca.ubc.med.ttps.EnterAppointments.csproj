@@ -44,6 +44,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -328,6 +330,29 @@
     <Content Include="Account\Web.config" />
     <Content Include="Content\standard\standard.skin" />
     <Content Include="Content\ubc_clf\js\main.zip" />
+    <Content Include="Scripts\jquery\jquery-ui.css" />
+    <Content Include="Scripts\jquery\jquery-ui.min.css" />
+    <Content Include="Scripts\jquery\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery\jquery-ui.structure.min.css" />
+    <Content Include="Scripts\jquery\jquery-ui.theme.min.css" />
+    <Content Include="WebControls\ucPeople.ascx" />
+    <EntityDeploy Include="Models\ttpirEntityDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ttpirEntityDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ttpirEntityDataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ttpirEntityDataModel.edmx</DependentUpon>
+      <LastGenOutput>ttpirEntityDataModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ttpirEntityDataModel.edmx.diagram">
+      <DependentUpon>ttpirEntityDataModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\ttpirEntityDataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ttpirEntityDataModel.edmx</DependentUpon>
+      <LastGenOutput>ttpirEntityDataModel.cs</LastGenOutput>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -509,7 +534,94 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\APPOINTMENT.cs">
+      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\APPOINTMENT_RANK.cs">
+      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\APPOINTMENT_ROLE.cs">
+      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\APPOINTMENT_ROLE_TYPE.cs">
+      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\APPOINTMENT_STATE.cs">
+      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\APPOINTMENT_STATUS.cs">
+      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\APPOINTMENT_TYPE.cs">
+      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CONTACT_TYPE.cs">
+      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DEPARTMENT.cs">
+      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GENDER.cs">
+      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HEALTH_AUTHORITY.cs">
+      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\IS_PROFILE_ACTIVE.cs">
+      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IS_RETIRED.cs">
+      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MD_UNDERGRAD_PROGRAM.cs">
+      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OCCUPATION.cs">
+      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PAYEE.cs">
+      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PAYEE_TYPE.cs">
+      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PAYMENT_ARRANGEMENT.cs">
+      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PAYMENT_INFO.cs">
+      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PERSON.cs">
+      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PHONE_NUMBER_TYPE.cs">
+      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PROVINCE_STATE.cs">
+      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SALUTATION.cs">
+      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ttpirEntityDataModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ttpirEntityDataModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ttpirEntityDataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ttpirEntityDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ttpirEntityDataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TTPS_CONTACT_INFO.cs">
+      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -533,9 +645,19 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
+    <Compile Include="WebControls\ucPeople.ascx.cs">
+      <DependentUpon>ucPeople.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebControls\ucPeople.ascx.designer.cs">
+      <DependentUpon>ucPeople.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

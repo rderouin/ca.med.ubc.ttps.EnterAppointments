@@ -3,8 +3,4 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="contentBody" runat="server">
 
 
-    <asp:FormView ID="personForm" runat="server" DataSourceID="ttpirEntityDataSource">
-    </asp:FormView>
-
-
-</asp:Content>
+    </asp:Content>
