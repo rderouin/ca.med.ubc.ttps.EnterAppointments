@@ -29,14 +29,5 @@ namespace ca.ubc.med.ttps.EnterAppointments {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSignIn;
-        
-        /// <summary>
-        /// ttpsEntityDataSource control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.EntityDataSource ttpsEntityDataSource;
     }
 }

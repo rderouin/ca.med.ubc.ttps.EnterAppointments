@@ -7,5 +7,4 @@
         <asp:Button ID="btnSignIn" runat="server" CssClass="btn btn-lg btn-primary btn-block" Text="Sign in" OnClick="btnSignIn_Click" />
     </div>
     <br />
-    <asp:EntityDataSource ID="ttpsEntityDataSource" runat="server" ConnectionString="name=ttpIrDataContext" DefaultContainerName="ttpIrDataContext" EnableFlattening="False" EntitySetName="People" EntityTypeFilter="PERSON" Select="it.[UBC_ID]"></asp:EntityDataSource>
 </asp:Content>

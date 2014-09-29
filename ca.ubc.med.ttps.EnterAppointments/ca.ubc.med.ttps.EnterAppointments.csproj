@@ -332,23 +332,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\standard\standard.skin" />
     <Content Include="Content\ubc_clf\js\main.zip" />
-    <EntityDeploy Include="Models\ttpsEntityDataModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ttpsEntityDataModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\ttpsEntityDataModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ttpsEntityDataModel.edmx</DependentUpon>
-      <LastGenOutput>ttpsEntityDataModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\ttpsEntityDataModel.edmx.diagram">
-      <DependentUpon>ttpsEntityDataModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\ttpsEntityDataModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ttpsEntityDataModel.edmx</DependentUpon>
-      <LastGenOutput>ttpsEntityDataModel.cs</LastGenOutput>
-    </Content>
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />
@@ -405,9 +388,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -432,99 +413,6 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Models\APPOINTMENT.cs">
-      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\APPOINTMENT_RANK.cs">
-      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\APPOINTMENT_ROLE.cs">
-      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\APPOINTMENT_ROLE_TYPE.cs">
-      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\APPOINTMENT_STATE.cs">
-      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\APPOINTMENT_STATUS.cs">
-      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\APPOINTMENT_TYPE.cs">
-      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CONTACT_TYPE.cs">
-      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DEPARTMENT.cs">
-      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\GENDER.cs">
-      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\HAS_ALTERNATE_NAME.cs">
-      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\HEALTH_AUTHORITY.cs">
-      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\IS_PROFILE_ACTIVE.cs">
-      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\IS_RETIRED.cs">
-      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\MD_UNDERGRAD_PROGRAM.cs">
-      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\OCCUPATION.cs">
-      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PAYEE.cs">
-      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PAYEE_TYPE.cs">
-      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PAYMENT_ARRANGEMENT.cs">
-      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PAYMENT_INFO.cs">
-      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PERSON.cs">
-      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PHONE_NUMBER_TYPE.cs">
-      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PREFERRED_NAME.cs">
-      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PROVINCE_STATE.cs">
-      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\SALUTATION.cs">
-      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ttpsEntityDataModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ttpsEntityDataModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ttpsEntityDataModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ttpsEntityDataModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ttpsEntityDataModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\TTPS_CONTACT_INFO.cs">
-      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -540,7 +428,6 @@
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
-    <Compile Include="Startup.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -586,6 +473,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
