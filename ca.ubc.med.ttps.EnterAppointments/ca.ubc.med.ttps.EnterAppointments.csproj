@@ -148,21 +148,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Account\AddPhoneNumber.aspx" />
-    <Content Include="Account\Confirm.aspx" />
-    <Content Include="Account\Forgot.aspx" />
-    <Content Include="Account\Lockout.aspx" />
-    <Content Include="Account\Login.aspx" />
-    <Content Include="Account\Manage.aspx" />
-    <Content Include="Account\ManageLogins.aspx" />
-    <Content Include="Account\ManagePassword.aspx" />
-    <Content Include="Account\OpenAuthProviders.ascx" />
-    <Content Include="Account\Register.aspx" />
-    <Content Include="Account\RegisterExternalLogin.aspx" />
-    <Content Include="Account\ResetPassword.aspx" />
-    <Content Include="Account\ResetPasswordConfirmation.aspx" />
-    <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
-    <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -340,39 +325,40 @@
     <Content Include="Content\ubc_clf\js\main.js" />
     <Content Include="Content\ubc_clf\js\_notes\dwsync.xml" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Login.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Account\Web.config" />
     <Content Include="Content\standard\standard.skin" />
     <Content Include="Content\ubc_clf\js\main.zip" />
+    <EntityDeploy Include="Models\ttpsEntityDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ttpsEntityDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ttpsEntityDataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ttpsEntityDataModel.edmx</DependentUpon>
+      <LastGenOutput>ttpsEntityDataModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ttpsEntityDataModel.edmx.diagram">
+      <DependentUpon>ttpsEntityDataModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\ttpsEntityDataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ttpsEntityDataModel.edmx</DependentUpon>
+      <LastGenOutput>ttpsEntityDataModel.cs</LastGenOutput>
+    </Content>
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />
     <Content Include="Scripts\jquery-ui.js" />
     <Content Include="Scripts\jquery-ui.min.js" />
     <Content Include="WebControls\ucAppointment.ascx" />
+    <Content Include="WebControls\ucLogin.ascx" />
     <Content Include="WebControls\ucPayee.ascx" />
     <Content Include="WebControls\ucRole.ascx" />
     <Content Include="WebControls\ucPerson.ascx" />
-    <EntityDeploy Include="Models\ttpirEntityDataModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ttpirEntityDataModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\ttpirEntityDataModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ttpirEntityDataModel.edmx</DependentUpon>
-      <LastGenOutput>ttpirEntityDataModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\ttpirEntityDataModel.edmx.diagram">
-      <DependentUpon>ttpirEntityDataModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\ttpirEntityDataModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ttpirEntityDataModel.edmx</DependentUpon>
-      <LastGenOutput>ttpirEntityDataModel.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
@@ -418,111 +404,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account\AddPhoneNumber.aspx.cs">
-      <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\AddPhoneNumber.aspx.designer.cs">
-      <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\Confirm.aspx.cs">
-      <DependentUpon>Confirm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\Confirm.aspx.designer.cs">
-      <DependentUpon>Confirm.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\Forgot.aspx.cs">
-      <DependentUpon>Forgot.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\Forgot.aspx.designer.cs">
-      <DependentUpon>Forgot.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\Lockout.aspx.cs">
-      <DependentUpon>Lockout.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\Lockout.aspx.designer.cs">
-      <DependentUpon>Lockout.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\Manage.aspx.cs">
-      <DependentUpon>Manage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\Manage.aspx.designer.cs">
-      <DependentUpon>Manage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\ManageLogins.aspx.cs">
-      <DependentUpon>ManageLogins.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\ManageLogins.aspx.designer.cs">
-      <DependentUpon>ManageLogins.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\ManagePassword.aspx.cs">
-      <DependentUpon>ManagePassword.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\ManagePassword.aspx.designer.cs">
-      <DependentUpon>ManagePassword.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\OpenAuthProviders.ascx.cs">
-      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\OpenAuthProviders.ascx.designer.cs">
-      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\Register.aspx.cs">
-      <DependentUpon>Register.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\Register.aspx.designer.cs">
-      <DependentUpon>Register.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\RegisterExternalLogin.aspx.cs">
-      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
-      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\ResetPassword.aspx.cs">
-      <DependentUpon>ResetPassword.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\ResetPassword.aspx.designer.cs">
-      <DependentUpon>ResetPassword.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\ResetPasswordConfirmation.aspx.cs">
-      <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\ResetPasswordConfirmation.aspx.designer.cs">
-      <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\TwoFactorAuthenticationSignIn.aspx.cs">
-      <DependentUpon>TwoFactorAuthenticationSignIn.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\TwoFactorAuthenticationSignIn.aspx.designer.cs">
-      <DependentUpon>TwoFactorAuthenticationSignIn.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\VerifyPhoneNumber.aspx.cs">
-      <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
-      <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -544,93 +425,105 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Models\APPOINTMENT.cs">
-      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\APPOINTMENT_RANK.cs">
-      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\APPOINTMENT_ROLE.cs">
-      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\APPOINTMENT_ROLE_TYPE.cs">
-      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\APPOINTMENT_STATE.cs">
-      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\APPOINTMENT_STATUS.cs">
-      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\APPOINTMENT_TYPE.cs">
-      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CONTACT_TYPE.cs">
-      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DEPARTMENT.cs">
-      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\GENDER.cs">
-      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HAS_ALTERNATE_NAME.cs">
+      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HEALTH_AUTHORITY.cs">
-      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\IS_PROFILE_ACTIVE.cs">
-      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\IS_RETIRED.cs">
-      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MD_UNDERGRAD_PROGRAM.cs">
-      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\OCCUPATION.cs">
-      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PAYEE.cs">
-      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PAYEE_TYPE.cs">
-      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PAYMENT_ARRANGEMENT.cs">
-      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PAYMENT_INFO.cs">
-      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PERSON.cs">
-      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PHONE_NUMBER_TYPE.cs">
-      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PREFERRED_NAME.cs">
+      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PROVINCE_STATE.cs">
-      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SALUTATION.cs">
-      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ttpirEntityDataModel.Context.cs">
+    <Compile Include="Models\ttpsEntityDataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ttpirEntityDataModel.Context.tt</DependentUpon>
+      <DependentUpon>ttpsEntityDataModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ttpirEntityDataModel.cs">
+    <Compile Include="Models\ttpsEntityDataModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ttpirEntityDataModel.Designer.cs">
+    <Compile Include="Models\ttpsEntityDataModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ttpirEntityDataModel.edmx</DependentUpon>
+      <DependentUpon>ttpsEntityDataModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\TTPS_CONTACT_INFO.cs">
-      <DependentUpon>ttpirEntityDataModel.tt</DependentUpon>
+      <DependentUpon>ttpsEntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
@@ -661,6 +554,13 @@
     </Compile>
     <Compile Include="WebControls\ucAppointment.ascx.designer.cs">
       <DependentUpon>ucAppointment.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebControls\ucLogin.ascx.cs">
+      <DependentUpon>ucLogin.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebControls\ucLogin.ascx.designer.cs">
+      <DependentUpon>ucLogin.ascx</DependentUpon>
     </Compile>
     <Compile Include="WebControls\ucPayee.ascx.cs">
       <DependentUpon>ucPayee.ascx</DependentUpon>

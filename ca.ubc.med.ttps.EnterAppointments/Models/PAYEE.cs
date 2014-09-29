@@ -20,7 +20,7 @@ namespace ca.ubc.med.ttps.EnterAppointments.Models
         }
     
         public int PAYEE_ID { get; set; }
-        public int APPOINTMENT_ROLE_ID { get; set; }
+        public int PERSON_ID { get; set; }
         public int PAYEE_TYPE_ID { get; set; }
         public Nullable<bool> ADDRESS_IS_MAILING_IND { get; set; }
         public int PAYEE_ORGANIZATION_ID { get; set; }
@@ -34,7 +34,6 @@ namespace ca.ubc.med.ttps.EnterAppointments.Models
         public Nullable<System.DateTime> CREATED_TS { get; set; }
         public string CREATED_USER { get; set; }
     
-        public virtual APPOINTMENT_ROLE APPOINTMENT_ROLE { get; set; }
         public virtual PAYEE_TYPE PAYEE_TYPE { get; set; }
         public virtual ICollection<PAYMENT_INFO> PAYMENT_INFO { get; set; }
     }

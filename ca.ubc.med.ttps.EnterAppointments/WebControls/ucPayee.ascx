@@ -1,5 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucPayee.ascx.cs" Inherits="ca.ubc.med.ttps.EnterAppointments.WebControls.ucPayee" %>
 <link href="../Content/custom.css" rel="stylesheet" />
+<link href="../Content/bootstrap.min.css" rel="stylesheet" />
 <table style="width:100%">
     <tr>
         <td class="auto-style2">Payee Type</td>
@@ -44,7 +45,7 @@
     </tr>
     <tr>
         <td class="auto-style2">
-            <asp:Button ID="btnGetAddress" runat="server" CssClass="ButtonRoundedCorners"  Text="Copy Payee Address from Primary Address" />
+            <asp:Button ID="btnGetAddress" runat="server" CssClass="btn btn-lg btn-primary btn-block"  Text="Copy Payee Address from Primary Address" />
         </td>
     </tr>
     <tr>
@@ -257,7 +258,7 @@
     </tr>
     <tr>
         <td colspan="3" style="text-align:right;">
-            <asp:Button ID="btnSave" runat="server" CssClass="ButtonRoundedCorners" Text="Save" Width="60px" />&nbsp;<asp:Button ID="btnContinueToAppointment" CssClass="ButtonRoundedCorners" runat="server" Text="Button" />
+            <asp:Button ID="btnSave" runat="server" CssClass="btn btn-lg btn-primary btn-block" Text="Save" Width="60px" />&nbsp;<asp:Button ID="btnContinueToAppointment" CssClass="btn btn-lg btn-primary btn-block" runat="server" Text="Button" />
         </td>
     </tr>
     <tr>

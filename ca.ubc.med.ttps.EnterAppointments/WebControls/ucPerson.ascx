@@ -1,5 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucPerson.ascx.cs" Inherits="ca.ubc.med.ttps.EnterAppointments.WebControls.ucPerson" %>
 <link href="../Content/custom.css" rel="stylesheet" />
+<link href="../Content/bootstrap.min.css" rel="stylesheet" />
 <table style="width:100%">
     <tr>
         <td class="auto-style1">UBC ID#:</td>
@@ -224,7 +225,7 @@
         <td>&nbsp;</td>
         <td><asp:DropDownList ID="ddlPaymentArrangement" runat="server"></asp:DropDownList>
             <div id="paymentArrangementInnerHtml">
-                <asp:Button ID="btnAddPayee"  CssClass="ButtonRoundedCorners" runat="server" Text="Add Payee" Width="74px" />
+                <asp:Button ID="btnAddPayee"  CssClass="btn btn-lg btn-primary btn-block" runat="server" Text="Add Payee" Width="74px" />
                 <b>Payee Information</b>
                 <table>
                     <tr>
@@ -246,7 +247,7 @@
     </tr>
     <tr>
         <td colspan="3" style="text-align:center;">
-            <asp:Button ID="btnSave" runat="server" CssClass="ButtonRoundedCorners" Text="Save" Width="60px" />&nbsp;<asp:Button ID="btnContinueToAppointment" runat="server" Text="Continue" CssClass="ButtonRoundedCorners" />
+            <asp:Button ID="btnSave" runat="server" CssClass="btn btn-lg btn-primary btn-block" Text="Save" Width="60px" />&nbsp;<asp:Button ID="btnContinueToAppointment" runat="server" Text="Continue" CssClass="btn btn-lg btn-primary btn-block" />
         </td>
     </tr>
 </table>

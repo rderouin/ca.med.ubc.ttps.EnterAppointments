@@ -22,10 +22,15 @@ namespace ca.ubc.med.ttps.EnterAppointments.Models
     
         public int PERSON_ID { get; set; }
         public string UBC_ID { get; set; }
+        public Nullable<bool> IS_ACTIVE_PROFILE { get; set; }
+        public Nullable<bool> IS_RETIRED { get; set; }
+        public Nullable<bool> HAS_ALTERNATE_NAME { get; set; }
+        public string PREFERRED_NAME { get; set; }
         public string FIRST_NAME { get; set; }
         public string MIDDLE_NAME { get; set; }
         public string LAST_NAME { get; set; }
-        public string SALUTATION_PREFIX { get; set; }
+        public string NAME_SUFFIX { get; set; }
+        public Nullable<bool> SALUTATION_ID { get; set; }
         public string ALTERNATE_FIRST_NAME { get; set; }
         public string ALTERNATE_MIDDLE_NAME { get; set; }
         public string ALTERNATE_LAST_NAME { get; set; }
@@ -37,10 +42,6 @@ namespace ca.ubc.med.ttps.EnterAppointments.Models
         public string LAST_UPDT_USER { get; set; }
         public Nullable<System.DateTime> CREATED_TS { get; set; }
         public string CREATED_USER { get; set; }
-        public Nullable<bool> IS_ACTIVE_PROFILE { get; set; }
-        public Nullable<bool> IS_RETIRED { get; set; }
-        public Nullable<bool> HAS_ALTERNATE_NAME { get; set; }
-        public string PREFERRED_NAME { get; set; }
     
         public virtual ICollection<APPOINTMENT> APPOINTMENTs { get; set; }
         public virtual GENDER GENDER { get; set; }

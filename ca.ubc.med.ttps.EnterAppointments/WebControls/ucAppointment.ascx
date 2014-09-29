@@ -1,5 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucAppointment.ascx.cs" Inherits="ca.ubc.med.ttps.EnterAppointments.WebControls.ucAppointment" %>
 <link href="../Content/custom.css" rel="stylesheet" />
+<link href="../Content/bootstrap.min.css" rel="stylesheet" />
 <table style="width:100%">
     <tr>
         <td class="auto-style1">Appointment Type</td>
@@ -41,7 +42,7 @@
     </tr>
     <tr>
         <td colspan="3" style="text-align:center;">
-            <asp:Button ID="btnSave" runat="server" Text="Save" Width="60px"  CssClass="ButtonRoundedCorners" />&nbsp;<asp:Button ID="btnContinueToRole" runat="server" Text="Continue" Width="60px"  CssClass="ButtonRoundedCorners" />
+            <asp:Button ID="btnSave" runat="server" Text="Save" Width="60px"  CssClass="btn btn-lg btn-primary btn-block" />&nbsp;<asp:Button ID="btnContinueToRole" runat="server" Text="Continue" Width="60px"  CssClass="btn btn-lg btn-primary btn-block" />
         </td>
     </tr>
 </table>

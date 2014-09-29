@@ -16,6 +16,7 @@ namespace ca.ubc.med.ttps.EnterAppointments.Models
     {
         public int SALUTATION_ID { get; set; }
         public string SALUTATION_PREFIX { get; set; }
+        public string SALUTATION_DESC { get; set; }
         public Nullable<System.DateTime> LAST_UPDT_TS { get; set; }
         public string LAST_UPDT_USER { get; set; }
         public Nullable<System.DateTime> CREATED_TS { get; set; }

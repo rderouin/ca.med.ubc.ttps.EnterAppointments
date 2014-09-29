@@ -22,6 +22,7 @@ namespace ca.ubc.med.ttps.EnterAppointments.Models
         public int PROVINCE_STATE_ID { get; set; }
         public string PROVINCE_STATE_DESC { get; set; }
         public string PROVINCE_STATE_ABBREV { get; set; }
+        public Nullable<int> COUNTRY_ID { get; set; }
         public Nullable<System.DateTime> LAST_UPDT_TS { get; set; }
         public string LAST_UPDT_USER { get; set; }
         public Nullable<System.DateTime> CREATED_TS { get; set; }
