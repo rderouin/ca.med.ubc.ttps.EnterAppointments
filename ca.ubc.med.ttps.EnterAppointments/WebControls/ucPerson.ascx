@@ -1,10 +1,5 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucPeople.ascx.cs" Inherits="ca.ubc.med.ttps.EnterAppointments.WebControls.ucPerson" %>
-<style type="text/css">
-    .auto-style1 
-    {
-        width: 446px;
-    }
-</style>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucPerson.ascx.cs" Inherits="ca.ubc.med.ttps.EnterAppointments.WebControls.ucPerson" %>
+<link href="../Content/custom.css" rel="stylesheet" />
 <table style="width:100%">
     <tr>
         <td class="auto-style1">UBC ID#:</td>
@@ -227,14 +222,31 @@
     <tr>
         <td class="auto-style1">Payment Arrangement</td>
         <td>&nbsp;</td>
-        <td><asp:DropDownList ID="ddlPaymentArrangement" runat="server"></asp:DropDownList></td>
+        <td><asp:DropDownList ID="ddlPaymentArrangement" runat="server"></asp:DropDownList>
+            <div id="paymentArrangementInnerHtml">
+                <asp:Button ID="btnAddPayee"  CssClass="ButtonRoundedCorners" runat="server" Text="Add Payee" Width="74px" />
+                <b>Payee Information</b>
+                <table>
+                    <tr>
+                        <td>Payee Name</td>
+                        <td>Payee Type</td>
+                    </tr>
+                    <tr>
+                        <td><asp:TextBox ID="txtPayeeName" runat="server"></asp:TextBox></td>
+                        <td><asp:DropDownList ID="ddlPayeeType" runat="server"></asp:DropDownList></td>
+                        <td>validator</td>
+                    </tr>
+                </table>
+                place gridview
+            </div>
+        </td>
     </tr>
     <tr>
-        <td>&nbsp;</td>
+        <td colspan="3"><hr /></td>
     </tr>
     <tr>
         <td colspan="3" style="text-align:center;">
-            <asp:Button ID="btnSave" runat="server" Text="Save" Width="60px" />&nbsp;<asp:Button ID="Button1" runat="server" Text="Button" />
+            <asp:Button ID="btnSave" runat="server" CssClass="ButtonRoundedCorners" Text="Save" Width="60px" />&nbsp;<asp:Button ID="btnContinueToAppointment" runat="server" Text="Continue" CssClass="ButtonRoundedCorners" />
         </td>
     </tr>
 </table>
